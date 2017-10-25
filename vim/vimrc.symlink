@@ -1,4 +1,134 @@
-syntax on
+" ========== General ==========
+" show line number / relative line number
+set number 
+set relativenumber
 
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
+" indent lines automatically
+set autoindent
+
+" show invisible characters
+" set listchars=eol:$
+" set list
+
+highlight NonText ctermfg=LightGrey guifg=LightGrey
+
+" set paste
+set paste
+
+" whether vi-compatible
+set nocompatible
+
+" always show a status line
+set laststatus=2
+" ========== /General ==========
+
+
+
+" ========== Tab-space ==========
+" size of a hard tabstop
+set tabstop=4
+
+" do not expand tab
+set expandtab
+
+" size of an "indent"
+set shiftwidth=4
+
+" a combination of spaces and tabs are used to simulate tab stops at a width
+" other than the (hard)tabstop
+set softtabstop=4
+
+" make "tab" insert indents instead of tabs at the beginning of a line
+set smarttab
+" ========== /Tab-space ==========
+
+
+
+" ========== Search ==========
+" highlight search
+set hlsearch
+
+" increment search
+set is
+
+" ignore case
+set ignorecase
+" ========== /Search ==========
+
+
+
+" ========== Encoding ==========
+" encodings vim used internally, for buffers, messages, etc
+set encoding=utf-8
+
+" file encoding for new file
+set fileencoding=utf-8
+
+" the order of encodings vim use to determine file encoding, cp936 is gbk
+set fileencodings=ucs-bom,utf-8,cp936
+" ========== /Encoding ==========
+
+
+
+" ========== Shortcuts ==========
+" mapping
+" easy saving
+map gs :w<CR>
+
+" back to normal mode more easily
+imap jk <Esc>
+" ========== /Shortcuts ==========
+
+
+
+" ========== COPY & Paste ==========
+" copy whole file to clipboard
+map gc :% y +<CR>
+
+" copy a word
+map gw "+yt 
+
+" copy to end of line
+map ge "+y$
+
+" paste from clipboard
+map gq "+p
+" ========== /COPY & Paste ==========
+
+
+
+" ========== Abbreviation ========== 
+" abbreviations, not effective in paste mode
+"
+:abbr begincomment 
+\<CR>/********************
+\<CR>* begin
+\<CR>********************/
+
+:abbr endcomment 
+\<CR>/********************
+\<CR>* end
+\<CR>********************/
+" ========== /Abbreviation ========== 
+
+
+
+" ========== Autocompletion ========== 
+" use Tab for auto completion
+" :imap <Tab> <C-P>
+
+" dictionary and thesaurus
+:set dictionary=~/.vim/mydict
+:set thesaurus=~/.vim/mythesaurus
+" ========== /Autocompletion ========== 
+
+
+
+" ========== Plugin ========== 
+" filetype plugin indent on
+
+" for plugin fencview.vim: Auto detect CJK and Unicode file encodings. 
+" do not autodetect, which may cause error
+" let g:fencview_autodetect=0
+" ========== /Plugin ========== 
+
