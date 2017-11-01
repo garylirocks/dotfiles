@@ -3,6 +3,8 @@
 # =========================
 # change prefix
 set -g prefix M-a
+unbind C-b
+bind M-a send-prefix
 
 # output buffer limits
 set-option -g history-limit 100000
