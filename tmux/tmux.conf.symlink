@@ -45,7 +45,9 @@ setw -g mode-keys vi
 
 # use vi's visual mode key and copy key
 bind-key -t vi-copy 'v' begin-selection
-bind-key -t vi-copy 'y' copy-selection
+
+# use 'y' to copy selection and send it to system clipboard as well
+bind-key -t vi-copy y copy-pipe 'xclip -in -selection clipboard'
 # =========================
 #   /Set vi mode
 # =========================
