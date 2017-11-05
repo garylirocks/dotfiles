@@ -1,33 +1,36 @@
-# Local/private config goes in the include
 [include]
-        path = ~/.gitconfig.local
-[hub]
-        protocol = https
-[alias]
-        co = checkout
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
-        rank-contributors = !$ZSH/bin/git-rank-contributors
-        count   = !git shortlog -sn
-[color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+	path = ~/.gitconfig.local
+
 [core]
-        excludesfile = ~/.gitignore
-        editor = vim
-[apply]
-        whitespace = nowarn
-[mergetool]
-        keepBackup = false
-[difftool]
-        prompt = false
-[help]
-        autocorrect = 1
+	editor = vim
+	autocrlf = input
+	eol = lf
+	safecrlf = warn
+	excludesfile = ~/.gitignore
+	quotepath = false
+
 [push]
-        # See `git help config` (search for push.default)
-        # for more information on different options of the below setting.
-        #
-        # Setting to git 2.0 default to suppress warning message
-        default = simple
+	default = tracking
+
+[alias]
+	co = checkout
+	st = status
+	b  = branch -a
+	l  = log --pretty=format:'%h %ad | %an | %s%d' --graph --date=short
+	d  = diff -w
+	s  = show --stat
+	last  = log -1 HEAD
+	type = cat-file -t
+	dump = cat-file -p    
+	alias = config --get-regexp alias.*
+	add-untracked = !"git ls-files -o --exclude-standard | xargs -i git add '{}'"
+
+[i18n]
+	logOutputEncoding = utf-8
+	commitEncoding = utf-8
+
+[color]
+	ui = true
+
+[init]
+	templatedir = ~/.git/templates

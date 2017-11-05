@@ -1,0 +1,30 @@
+"3.7 (created: 2013/04/03 18:20:07)
+
+source! /home/gary/.vimperatorrc.local
+
+" vim: set ft=vimperator:
+
+
+" show all toolbars
+map ga :set gui=all<CR>
+
+" show only the tabs toolbar
+map gb :set gui=none,tabs,addons<CR>
+
+" show only the tabs toolbar
+map gc :set gui=none<CR>
+
+:set gui=none,tabs,addons
+
+" turn on or off bookmarks bar
+map gk :dialog bookmarks<CR>
+
+
+" hint characters
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
+
+
+
+" open google drive
+map gd:tabopen https://drive.google.com
+

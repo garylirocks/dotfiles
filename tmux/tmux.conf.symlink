@@ -1,0 +1,71 @@
+# =========================
+#   General
+# =========================
+# change prefix
+set -g prefix M-a
+unbind C-b
+bind M-a send-prefix
+
+# output buffer limits
+set-option -g history-limit 100000
+
+# makes vim works properly in tmux
+#setw -g xterm-keys on
+#set-option -g default-terminal "screen-256color"
+# =========================
+#   /General
+# =========================
+
+
+
+# =========================
+#   Window splitting - Pane selecting
+# =========================
+# split window
+bind-key | split-window -h 
+bind-key - split-window
+
+# use alt + hjkl to select panes
+bind -n M-h select-pane -L
+bind -n M-l select-pane -R
+bind -n M-k select-pane -U
+bind -n M-j select-pane -D
+# =========================
+#   /Window splitting - Pane selecting
+# =========================
+
+
+
+# =========================
+#   Set vi mode
+# =========================
+# change key bindings
+set -g status-keys vi
+setw -g mode-keys vi
+
+# use vi's visual mode key and copy key
+bind-key -t vi-copy 'v' begin-selection
+bind-key -t vi-copy 'y' copy-selection
+# =========================
+#   /Set vi mode
+# =========================
+
+
+
+# =========================
+#   Set status bar
+# =========================
+set -g status-bg black
+set -g status-fg white
+set -g status-left '#[fg=green]#H'  # show host name
+set -g status-right '%a %m-%d %H:%M' # show current time
+
+# Highlight active window
+set-window-option -g window-status-current-bg red
+
+# Set window notifications
+setw -g monitor-activity on
+set -g visual-activity on
+# =========================
+#   /Set status bar
+# =========================
