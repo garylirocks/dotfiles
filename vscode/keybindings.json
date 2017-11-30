@@ -2,17 +2,17 @@
 [
     // save
     { "key": "g s",                "command": "workbench.action.files.save",
-                                      "when": "vim.active && !inDebugRepl && vim.mode != 'Insert'" },
+                                      "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'" },
     // next tab
     { "key": "g t",                "command": "workbench.action.nextEditor",
-                                      "when": "vim.active && !inDebugRepl && vim.mode != 'Insert'" },
+                                      "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'" },
     // previous tab
     { "key": "g p",                "command": "workbench.action.previousEditor",
-                                      "when": "vim.active && !inDebugRepl && vim.mode != 'Insert'" },
+                                      "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'" },
     // close file
     { "key": "ctrl+w",             "command": "workbench.action.closeActiveEditor",
                                       "when": "vim.active && !inDebugRepl && vim.mode != 'Insert'" },
     // first line, not working
     { "key": "g 0",                "command": "list.focusFirst",
-                                      "when": "vim.active && !inDebugRepl && vim.mode != 'Insert'" }
+                                      "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'" }
 ]

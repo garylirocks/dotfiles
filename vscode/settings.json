@@ -1,2 +1,13 @@
 {
+    "sync.gist": "0ad8b57b1308b6903822754295c25040",
+    "sync.lastUpload": "2017-11-30T03:51:50.931Z",
+    "sync.autoDownload": true,
+    "sync.autoUpload": false,
+    "sync.lastDownload": "",
+    "sync.forceDownload": false,
+    "sync.anonymousGist": false,
+    "sync.host": "",
+    "sync.pathPrefix": "",
+    "sync.quietSync": false,
+    "sync.askGistName": false
 }
