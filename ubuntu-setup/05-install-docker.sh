@@ -22,5 +22,4 @@ sudo apt-get update
 # install docker community version
 sudo apt-get install docker-ce
 
-# add user to 'docker' group to avoid a permission issue
 sudo usermod -a -G docker $(id --user --name)
