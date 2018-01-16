@@ -9,5 +9,29 @@
     "sync.host": "",
     "sync.pathPrefix": "",
     "sync.quietSync": false,
-    "sync.askGistName": false
+    "sync.askGistName": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "window.zoomLevel": 2,
+
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["g","g"],
+            "after": [],
+            "commands": [
+                {
+                    "command": ":1"
+                }
+            ]
+        },
+        {
+            "before": ["g","s"],
+            "after": [],
+            "commands": [
+                {
+                    "command": ":w"
+                }
+            ]
+        }
+    ],
+    "editor.multiCursorModifier": "ctrlCmd"
 }
