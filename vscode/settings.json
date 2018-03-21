@@ -11,7 +11,7 @@
     "sync.quietSync": false,
     "sync.askGistName": false,
     "workbench.startupEditor": "newUntitledFile",
-    "window.zoomLevel": 2,
+    "window.zoomLevel": 0,
 
     "vim.otherModesKeyBindingsNonRecursive": [
         {
@@ -33,5 +33,7 @@
             ]
         }
     ],
-    "editor.multiCursorModifier": "ctrlCmd"
+    "editor.multiCursorModifier": "ctrlCmd",
+
+    "eslint.packageManager": "yarn"
 }

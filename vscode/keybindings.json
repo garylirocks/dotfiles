@@ -1,5 +1,12 @@
 // Place your key bindings in this file to overwrite the defaults
 [
     // close file
-    { "key": "ctrl+w",             "command": "workbench.action.closeActiveEditor"}
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+shift+8",
+        "command": "workbench.action.terminal.focus"
+    }
 ]
