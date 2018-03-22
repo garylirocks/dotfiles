@@ -6,9 +6,10 @@ DROP_CONFIG=~/drop/config
 CONFIG_HOME=$DROP_CONFIG/home
 
 # link ssh configs
-ln -s $CONFIG_HOME/.ssh ./
-ln -s $CONFIG_HOME/.fonts ./
+ln -s $CONFIG_HOME/ssh-symlink ~/.ssh
 
+# link fonts folder
+ln -s $CONFIG_HOME/fonts-symlink ~/.fonts
 
 # link up hosts file
 sudo ln -s $DROP_CONFIG/hosts /etc/hosts
@@ -16,7 +17,6 @@ sudo ln -s $DROP_CONFIG/hosts /etc/hosts
 # user-dirs file
 echo 'Copy user-dirs.dirs'
 cp $CONFIG_HOME/config/user-dirs.dirs ~/.config/
-
 
 # terminator
 ln -s $CONFIG_HOME/config/terminator/config ~/.config/terminator/config
