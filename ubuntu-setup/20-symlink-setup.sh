@@ -1,28 +1,38 @@
 #/bin/bash
+# create symlinks pointing to resources in Dropbox
 
 cd ~
 
-DROP_CONFIG=~/drop/config
-CONFIG_HOME=$DROP_CONFIG/home
+CONFIG_SRC=~/drop/config
+CONFIG_SRC_HOME=$CONFIG_SRC/home
+BIN_SRC=~/drop/code/bin
+LNOTE_SRC=~/drop/docs/notes/local-notes.md
+
+# link bin
+ln -s $BIN_SRC ~/bin
 
 # link ssh configs
-ln -s $CONFIG_HOME/ssh-symlink ~/.ssh
+ln -s $CONFIG_SRC_HOME/ssh-symlink ~/.ssh
 
 # link fonts folder
-ln -s $CONFIG_HOME/fonts-symlink ~/.fonts
+ln -s $CONFIG_SRC_HOME/fonts-symlink ~/.fonts
 
 # link up hosts file
-sudo ln -s $DROP_CONFIG/hosts /etc/hosts
+sudo ln -s $CONFIG_SRC/hosts /etc/hosts
+
+# link local notes
+ln -s $LNOTE_SRC ~/lnotes
 
 # user-dirs file
 echo 'Copy user-dirs.dirs'
-cp $CONFIG_HOME/config/user-dirs.dirs ~/.config/
+cp $CONFIG_SRC_HOME/config/user-dirs.dirs ~/.config/
+
 
 # terminator
-ln -s $CONFIG_HOME/config/terminator/config ~/.config/terminator/config
+# ln -s $CONFIG_SRC_HOME/config/terminator/config ~/.config/terminator/config
 
 
 # autostart
-ln -s $CONFIG_HOME/config/autostart/dropboxd.desktop ~/.config/autostart/dropboxd.desktop
-ln -s $CONFIG_HOME/config/autostart/capslockasctrl.desktop ~/.config/autostart/capslockasctrl.desktop
-ln -s $CONFIG_HOME/config/autostart/trackpoint.desktop ~/.config/autostart/trackpoint.desktop
+ln -s $CONFIG_SRC_HOME/config/autostart/dropboxd.desktop ~/.config/autostart/dropboxd.desktop
+ln -s $CONFIG_SRC_HOME/config/autostart/capslockasctrl.desktop ~/.config/autostart/capslockasctrl.desktop
+ln -s $CONFIG_SRC_HOME/config/autostart/trackpoint.desktop ~/.config/autostart/trackpoint.desktop
