@@ -14,6 +14,10 @@ ln -s $BIN_SRC ~/bin
 # link ssh configs
 ln -s $CONFIG_SRC_HOME/ssh-symlink ~/.ssh
 
+# link AWS config
+ln -s $CONFIG_SRC_HOME/aws-symlink ~/.aws
+
+
 # link fonts folder
 ln -s $CONFIG_SRC_HOME/fonts-symlink ~/.fonts
 
