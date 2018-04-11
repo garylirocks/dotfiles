@@ -35,5 +35,9 @@
     ],
     "editor.multiCursorModifier": "ctrlCmd",
 
-    "eslint.packageManager": "yarn"
+    "eslint.packageManager": "yarn",
+
+
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false
 }
