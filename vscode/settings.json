@@ -1,6 +1,6 @@
 {
     "sync.gist": "0ad8b57b1308b6903822754295c25040",
-    "sync.lastUpload": "2017-11-30T03:51:50.931Z",
+    "sync.lastUpload": "2018-01-17T03:36:23.452Z",
     "sync.autoDownload": true,
     "sync.autoUpload": false,
     "sync.lastDownload": "",
@@ -11,7 +11,7 @@
     "sync.quietSync": false,
     "sync.askGistName": false,
     "workbench.startupEditor": "newUntitledFile",
-    "window.zoomLevel": 2,
+    "window.zoomLevel": 0,
 
     "vim.otherModesKeyBindingsNonRecursive": [
         {
