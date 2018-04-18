@@ -6,14 +6,8 @@ set relativenumber
 " indent lines automatically
 set autoindent
 
-" show invisible characters
-" set listchars=eol:$
-" set list
-
-highlight NonText ctermfg=LightGrey guifg=LightGrey
-
+" set paste mode
 " set paste
-set paste
 
 " whether vi-compatible
 set nocompatible    " be iMproved, required by Vundle
@@ -53,6 +47,21 @@ set smarttab
 
 
 
+" ========== Invisible Chars ==========
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+"set list
+
+" visit this page for color values:
+"    https://alvinalexander.com/linux/vi-vim-editor-color-scheme-syntax
+highlight NonText ctermfg=8 guifg=8
+highlight SpecialKey ctermfg=8 guifg=8
+
+" paste from clipboard
+map <F5> :set list!<CR>
+" ========== /Invisible Chars ==========
+
+
+
 " ========== Search ==========
 " highlight search
 set hlsearch
@@ -83,9 +92,6 @@ set fileencodings=ucs-bom,utf-8,cp936
 " mapping
 " easy saving
 map gs :w<CR>
-
-" back to normal mode more easily
-imap jk <Esc>
 " ========== /Shortcuts ==========
 
 
@@ -101,7 +107,7 @@ map gw "+yt
 map ge "+y$
 
 " paste from clipboard
-map gq "+p
+map gp "+p
 " ========== /COPY & Paste ==========
 
 
@@ -118,6 +124,8 @@ map gq "+p
 \<CR>/********************
 \<CR>* end
 \<CR>********************/
+
+inoremap `j ```javascript<CR><CR>```<Esc>ki
 " ========== /Abbreviation ==========
 
 
@@ -127,7 +135,7 @@ map gq "+p
 " :imap <Tab> <C-P>
 
 " dictionary and thesaurus
-:set dictionary=~/.vim/mydict
-:set thesaurus=~/.vim/mythesaurus
+set dictionary=~/.vim/mydict
+set thesaurus=~/.vim/mythesaurus
 " ========== /Autocompletion ==========
 

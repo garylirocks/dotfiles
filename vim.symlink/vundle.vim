@@ -53,6 +53,10 @@ Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
 nmap <F8> :TagbarToggle<CR>
 
+
+" surround
+Plugin 'tpope/vim-surround'
+
 " ====== /plugin on GitHub repo ====== 
 
 
