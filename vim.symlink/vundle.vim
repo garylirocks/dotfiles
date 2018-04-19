@@ -57,6 +57,11 @@ nmap <F8> :TagbarToggle<CR>
 " surround
 Plugin 'tpope/vim-surround'
 
+
+" vim-repeat
+Plugin 'tpope/vim-repeat'
+
+
 " ====== /plugin on GitHub repo ====== 
 
 
