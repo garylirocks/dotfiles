@@ -1,6 +1,6 @@
 {
     "sync.gist": "0ad8b57b1308b6903822754295c25040",
-    "sync.lastUpload": "2018-01-17T03:36:23.452Z",
+    "sync.lastUpload": "2018-05-09T02:16:36.352Z",
     "sync.autoDownload": true,
     "sync.autoUpload": false,
     "sync.lastDownload": "",
@@ -34,10 +34,12 @@
         }
     ],
     "editor.multiCursorModifier": "ctrlCmd",
+    "terminal.integrated.fontFamily": "Monaco, DejaVu Sans Mono",
 
     "eslint.packageManager": "yarn",
 
-
     "workbench.editor.enablePreview": false,
-    "workbench.editor.enablePreviewFromQuickOpen": false
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "sync.removeExtensions": true,
+    "sync.syncExtensions": true
 }
