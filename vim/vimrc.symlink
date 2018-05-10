@@ -31,7 +31,7 @@ source ~/.vim/vundle.vim
 " size of a hard tabstop
 set tabstop=4
 
-" do not expand tab
+" expand tab
 set expandtab
 
 " size of an "indent"
