@@ -1,6 +1,6 @@
 {
     "sync.gist": "0ad8b57b1308b6903822754295c25040",
-    "sync.lastUpload": "2018-01-17T03:36:23.452Z",
+    "sync.lastUpload": "2018-05-09T02:16:36.352Z",
     "sync.autoDownload": true,
     "sync.autoUpload": false,
     "sync.lastDownload": "",
@@ -34,6 +34,7 @@
         }
     ],
     "editor.multiCursorModifier": "ctrlCmd",
+
     "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "terminal.integrated.fontFamily": "'Monaco', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
 
@@ -41,5 +42,7 @@
 
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "workbench.statusBar.feedback.visible": false
+    "workbench.statusBar.feedback.visible": false,
+    "sync.removeExtensions": true,
+    "sync.syncExtensions": true
 }
