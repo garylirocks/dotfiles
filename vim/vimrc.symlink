@@ -53,8 +53,8 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 " visit this page for color values:
 "    https://alvinalexander.com/linux/vi-vim-editor-color-scheme-syntax
-highlight NonText ctermfg=8 guifg=8
-highlight SpecialKey ctermfg=8 guifg=8
+" highlight NonText ctermfg=8 guifg=8
+" highlight SpecialKey ctermfg=8 guifg=8
 
 " paste from clipboard
 map <F5> :set list!<CR>
