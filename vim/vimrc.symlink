@@ -97,6 +97,15 @@ map gs :w<CR>
 
 
 " ========== COPY & Paste ==========
+" setup clipboard in Mac
+
+set clipboard=unnamed
+" if has("clipboard")
+"   if has("unnamedplus") " X11 support
+"     set clipboard+=unnamedplus
+"   endif
+" endif
+
 " copy whole file to clipboard
 map gc :% y +<CR>
 
