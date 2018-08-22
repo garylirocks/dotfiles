@@ -11,5 +11,5 @@ atom.symlink/recovery
 
 git/gitconfig.local.symlink
 
-vim.symlink/bundle/
-vim.symlink/plugin/
+**/vim.symlink/bundle/
+**/vim.symlink/plugin/
