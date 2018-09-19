@@ -175,6 +175,13 @@ export NVM_DIR="$HOME/.nvm"
 [[ -f /home/gary/.nvm/versions/node/v9.8.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /home/gary/.nvm/versions/node/v9.8.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
 
-
-
+# ============================
+# yarn
+# ============================
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+
+# make sure the npm tools for current directory take priority
+export PATH="./node_modules/.bin:$PATH"
+
+
