@@ -14,6 +14,20 @@
 	<string>7B3C081C-032E-4060-AAF7-37AF4B18D40A</string>
 	<key>GlobalKeyMap</key>
 	<dict>
+		<key>0x45-0x120000</key>
+		<dict>
+			<key>Action</key>
+			<integer>29</integer>
+			<key>Text</key>
+			<string>7B3C081C-032E-4060-AAF7-37AF4B18D40A</string>
+		</dict>
+		<key>0x4f-0x120000</key>
+		<dict>
+			<key>Action</key>
+			<integer>28</integer>
+			<key>Text</key>
+			<string>7B3C081C-032E-4060-AAF7-37AF4B18D40A</string>
+		</dict>
 		<key>0x9-0x40000</key>
 		<dict>
 			<key>Action</key>
@@ -157,11 +171,15 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>-1543 768 620 392 -2560 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-2118 707 796 486 -2560 0 2560 1417 </string>
+	<string>3002 742 958 451 2560 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1127 459 890 652 -2560 0 2560 1417 </string>
+	<string>2924 43 2177 1352 2560 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1008 87 890 652 0 0 2560 1417 </string>
+	<key>NeverWarnAboutShortLivedSessions_7B3C081C-032E-4060-AAF7-37AF4B18D40A</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_7B3C081C-032E-4060-AAF7-37AF4B18D40A_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -456,20 +474,6 @@
 					<integer>11</integer>
 					<key>Text</key>
 					<string>0x7f</string>
-				</dict>
-				<key>0x5f-0x120000</key>
-				<dict>
-					<key>Action</key>
-					<integer>28</integer>
-					<key>Text</key>
-					<string>7B3C081C-032E-4060-AAF7-37AF4B18D40A</string>
-				</dict>
-				<key>0x7c-0x120000</key>
-				<dict>
-					<key>Action</key>
-					<integer>29</integer>
-					<key>Text</key>
-					<string>7B3C081C-032E-4060-AAF7-37AF4B18D40A</string>
 				</dict>
 				<key>0xf700-0x220000</key>
 				<dict>
@@ -851,7 +855,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-08-22T00:33:44Z</date>
+	<date>2018-08-23T00:33:49Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
