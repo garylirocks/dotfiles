@@ -89,14 +89,15 @@ set fileencodings=ucs-bom,utf-8,cp936
 
 
 " ========== Shortcuts ==========
-" mapping
+let mapleader=","
+
 " easy saving
-map gs :w<CR>
+map <leader>s :w<CR>
 " ========== /Shortcuts ==========
 
 
 
-" ========== COPY & Paste ==========
+" ========== Copy & Paste ==========
 " setup clipboard in Mac
 
 set clipboard=unnamed
@@ -107,17 +108,20 @@ set clipboard=unnamed
 " endif
 
 " copy whole file to clipboard
-map gc :% y +<CR>
+map <leader>c :% y +<CR>
 
 " copy a word
-map gw "+yt
+map <leader>w "+yt
 
 " copy to end of line
-map ge "+y$
+map <leader>e "+y$
 
 " paste from clipboard
-map gp "+p
-" ========== /COPY & Paste ==========
+map <leader>p "+p
+
+" paste from register, copy a word and use it to replace multiple other words
+map <leader>rr ciw<C-r>0<Esc>b
+" ========== /Copy & Paste ==========
 
 
 
