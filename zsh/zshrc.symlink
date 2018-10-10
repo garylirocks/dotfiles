@@ -150,6 +150,14 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 
 
 # ============================
+# edit command in full Vim editor with 'v'
+# ============================
+
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
+
+# ============================
 # nvm
 # ============================
 export NVM_DIR="$HOME/.nvm"
