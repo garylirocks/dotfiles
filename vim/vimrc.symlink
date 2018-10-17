@@ -53,8 +53,8 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 " visit this page for color values:
 "    https://alvinalexander.com/linux/vi-vim-editor-color-scheme-syntax
-highlight NonText ctermfg=8 guifg=8
-highlight SpecialKey ctermfg=8 guifg=8
+" highlight NonText ctermfg=8 guifg=8
+" highlight SpecialKey ctermfg=8 guifg=8
 
 " paste from clipboard
 map <F5> :set list!<CR>
@@ -89,26 +89,39 @@ set fileencodings=ucs-bom,utf-8,cp936
 
 
 " ========== Shortcuts ==========
-" mapping
+let mapleader=","
+
 " easy saving
 map gs :w<CR>
 " ========== /Shortcuts ==========
 
 
 
-" ========== COPY & Paste ==========
+" ========== Copy & Paste ==========
+" setup clipboard in Mac
+
+set clipboard=unnamed
+" if has("clipboard")
+"   if has("unnamedplus") " X11 support
+"     set clipboard+=unnamedplus
+"   endif
+" endif
+
 " copy whole file to clipboard
-map gc :% y +<CR>
+map <leader>c :% y +<CR>
 
 " copy a word
-map gw "+yt
+map <leader>w "+yt
 
 " copy to end of line
-map ge "+y$
+map <leader>e "+y$
 
 " paste from clipboard
-map gp "+p
-" ========== /COPY & Paste ==========
+map <leader>p "+p
+
+" paste from register, copy a word and use it to replace multiple other words
+map <leader>rr ciw<C-r>0<Esc>b
+" ========== /Copy & Paste ==========
 
 
 
