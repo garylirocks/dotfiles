@@ -2,7 +2,7 @@
 # ============================
 # Postman
 # ============================
-export PATH="/opt/Postman/:$PATH"
+# export PATH="/opt/Postman/:$PATH"
 
 # ============================
 # yarn
