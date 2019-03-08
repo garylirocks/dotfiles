@@ -1,8 +1,16 @@
 #!/bin/bash
 
 cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-~/.dropbox-dist/dropboxd
+echo "============================"
+echo "Dropbox installed"
+echo "============================"
 
-# after dropbox is installed, set the syncing folder to ~/docs/, a 'Dropbox' folder will be created in it automatically
-echo "**set the syncing folder to ~/docs**, and create a symlink ~/drop"
-ln -s ~/docs/Dropbox drop
+mkdir ~/docs/Dropbox
+ln -s ~/docs/Dropbox ~/drop
+
+echo "============================"
+echo "Please set the syncing folder to ~/docs in Dropbox preference"
+echo "Starting Dropbox now"
+echo "============================"
+
+~/.dropbox-dist/dropboxd

@@ -4,9 +4,8 @@
 sudo apt-get install gnome-tweak-tool
 
 # utilities
-sudo apt-get install curl terminator tmux vim-gnome
-sudo apt-get install xclip
-sudo apt-get install exuberant-ctags
+sudo apt-get install curl terminator vim-gnome exuberant-ctags
+sudo apt-get install tmux xclip
 
 # git
 sudo apt-get install git
