@@ -39,7 +39,10 @@ cp $CONFIG_SRC_HOME/config/user-dirs.dirs ~/.config/
 
 
 # terminator
-# ln -s $CONFIG_SRC_HOME/config/terminator/config ~/.config/terminator/config
+if [ ! -d ~/.config/terminator ]; then
+    mkdir ~/.config/terminator
+fi
+ln -s $CONFIG_SRC_HOME/config/terminator/config ~/.config/terminator/config
 
 
 # autostart

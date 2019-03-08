@@ -1,48 +1,125 @@
 {
-    "sync.gist": "0ad8b57b1308b6903822754295c25040",
-    "sync.lastUpload": "2018-05-09T02:16:36.352Z",
-    "sync.autoDownload": true,
-    "sync.autoUpload": false,
-    "sync.lastDownload": "",
-    "sync.forceDownload": false,
-    "sync.anonymousGist": false,
-    "sync.host": "",
-    "sync.pathPrefix": "",
-    "sync.quietSync": false,
-    "sync.askGistName": false,
-    "workbench.startupEditor": "newUntitledFile",
-    "window.zoomLevel": 0,
+  /****************
+   * Builtins
+   ****************/
+  // workbench
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.statusBar.feedback.visible": false,
+  "workbench.startupEditor": "newUntitledFile",
 
-    "vim.otherModesKeyBindingsNonRecursive": [
+  // editor
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.fontSize": 16,
+  "editor.fontFamily": "'Monaco', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.renderWhitespace": "none",
+  "editor.renderControlCharacters": true,
+  "editor.formatOnSave": true,
+  "editor.detectIndentation": true,
+
+  // terminal
+  "terminal.integrated.fontFamily": "'Monaco', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "terminal.integrated.shell.linux": "/bin/zsh",
+
+  // excluding files
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/.sass-cache": true
+  },
+
+  // builtin misc
+  "window.zoomLevel": 0,
+  "explorer.confirmDragAndDrop": false,
+  "breadcrumbs.enabled": true,
+  "files.trimTrailingWhitespace": true,
+
+  /****************
+   * Extensions
+   ****************/
+  // vim
+  "vim.surround": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.leader": ",",
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/usr/local/bin/nvim",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "r", "r"],
+      "after": ["c", "i", "w", "<C-r>", "0", "<Esc>", "b"]
+    },
+    {
+      "before": ["g", "g"],
+      "commands": [
         {
-            "before": ["g","g"],
-            "after": [],
-            "commands": [
-                {
-                    "command": ":1"
-                }
-            ]
-        },
-        {
-            "before": ["g","s"],
-            "after": [],
-            "commands": [
-                {
-                    "command": ":w"
-                }
-            ]
+          "command": ":1"
         }
-    ],
-    "editor.multiCursorModifier": "ctrlCmd",
+      ]
+    },
+    {
+      "before": ["<leader>", "c"],
+      "commands": [
+        {
+          "command": "copyFilePath"
+        }
+      ]
+    },
+    {
+      "before": ["g", "s"],
+      "commands": [
+        {
+          "command": ":w"
+        }
+      ]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
 
-    "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "terminal.integrated.fontFamily": "'Monaco', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  // sync
+  "sync.gist": "0ad8b57b1308b6903822754295c25040",
+  "sync.autoDownload": false,
+  "sync.autoUpload": true,
+  "sync.forceDownload": false,
+  "sync.quietSync": false,
+  "sync.askGistName": false,
+  "sync.removeExtensions": true,
+  "sync.syncExtensions": true,
 
-    "eslint.packageManager": "yarn",
+  // gitlens
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  "gitlens.views.compare.files.layout": "list",
+  "gitlens.views.search.files.layout": "list",
+  "gitlens.views.repositories.files.layout": "tree",
 
-    "workbench.editor.enablePreview": false,
-    "workbench.editor.enablePreviewFromQuickOpen": false,
-    "workbench.statusBar.feedback.visible": false,
-    "sync.removeExtensions": true,
-    "sync.syncExtensions": true
+  // flow
+  "flow.useNPMPackagedFlow": true,
+
+  /****************
+   * Language Specific
+   ****************/
+  // markdown
+  "[markdown]": {
+    "editor.quickSuggestions": true
+  },
+  "markdown.extension.preview.autoShowPreviewToSide": true,
+  "markdown.extension.toc.levels": "2..6",
+
+  // javascript/typescript
+  "typescript.validate.enable": false,
+  "javascript.validate.enable": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "eslint.packageManager": "yarn"
 }
