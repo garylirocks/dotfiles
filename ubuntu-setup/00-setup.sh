@@ -3,9 +3,6 @@
 # tweak fonts, make 'CapsLock' act as 'Ctrl'
 sudo apt-get install gnome-tweak-tool
 
-# git
-sudo apt-get install git
-
 # utilities
 sudo apt-get install curl
 sudo apt-get install terminator tmux 
