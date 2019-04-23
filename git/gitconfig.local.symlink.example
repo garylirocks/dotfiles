@@ -1,5 +1,5 @@
 [user]
-        name = AUTHORNAME
-        email = AUTHOREMAIL
+        name = Gary Li
+        email = gary@proworkflow.com
 [credential]
-        helper = GIT_CREDENTIAL_HELPER
+        helper = cache

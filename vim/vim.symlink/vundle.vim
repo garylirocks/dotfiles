@@ -38,7 +38,7 @@ map <C-n> :NERDTreeTabsToggle<CR>
 " powerful status line
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-let g:airline_theme='simple'
+" let g:airline_theme='simple'
 
 
 Plugin 'vim-syntastic/syntastic'
