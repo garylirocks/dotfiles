@@ -98,14 +98,10 @@ map gs :w<CR>
 
 
 " ========== Copy & Paste ==========
-" setup clipboard in Mac
+set clipboard=unnamedplus
 
-set clipboard=unnamed
-" if has("clipboard")
-"   if has("unnamedplus") " X11 support
-"     set clipboard+=unnamedplus
-"   endif
-" endif
+" copy to clipboard
+map <leader>y "+y
 
 " copy whole file to clipboard
 map <leader>c :% y +<CR>
