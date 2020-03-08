@@ -3,7 +3,6 @@
 
 [core]
 	editor = vim
-	autocrlf = input
 	eol = lf
 	safecrlf = warn
 	excludesfile = ~/.gitignore
@@ -19,7 +18,7 @@
 	st = status
 	b  = branch -a
 	l  = log --pretty=format:'%h %ad | %an | %s%d' --graph --date=short
-	d  = diff -w
+	d  = diff
 	sh  = show --stat
 	t = tag --annotate
 	last  = log -1 HEAD
