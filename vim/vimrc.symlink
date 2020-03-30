@@ -56,7 +56,6 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 " highlight NonText ctermfg=8 guifg=8
 " highlight SpecialKey ctermfg=8 guifg=8
 
-" paste from clipboard
 map <F5> :set list!<CR>
 " ========== /Invisible Chars ==========
 
@@ -98,10 +97,16 @@ map gs :w<CR>
 
 
 " ========== Copy & Paste ==========
-set clipboard=unnamedplus
-
 " copy to clipboard
 map <leader>y "+y
+
+set clipboard=unnamed
+
+if has("clipboard")
+    if has("unnamedplus") " X11 support
+        set clipboard+=unnamedplus
+    endif
+endif
 
 " copy whole file to clipboard
 map <leader>c :% y +<CR>

@@ -6,23 +6,21 @@
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.statusBar.feedback.visible": false,
-  "workbench.startupEditor": "newUntitledFile",
-
+  "workbench.startupEditor": "none",
   // editor
-  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.tabSize": 2,
+  "editor.multiCursorModifier": "alt",
   "editor.fontSize": 16,
   "editor.fontFamily": "'Monaco', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-  "editor.renderWhitespace": "none",
+  "editor.renderWhitespace": "all",
   "editor.renderControlCharacters": true,
-  "editor.formatOnSave": true,
   "editor.detectIndentation": true,
-
+  "editor.snippetSuggestions": "top",
   // terminal
   "terminal.integrated.fontFamily": "'Monaco', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.shell.osx": "/bin/zsh",
   "terminal.integrated.shell.linux": "/bin/zsh",
-
   // excluding files
   "files.exclude": {
     "**/.git": true,
@@ -32,13 +30,11 @@
     "**/.DS_Store": true,
     "**/.sass-cache": true
   },
-
   // builtin misc
   "window.zoomLevel": 0,
   "explorer.confirmDragAndDrop": false,
   "breadcrumbs.enabled": true,
-  "files.trimTrailingWhitespace": true,
-
+  "git.autofetch": true,
   /****************
    * Extensions
    ****************/
@@ -49,15 +45,50 @@
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
   "vim.leader": ",",
-  "vim.enableNeovim": true,
-  "vim.neovimPath": "/usr/local/bin/nvim",
+  // "vim.enableNeovim": true,
+  // "vim.neovimPath": "/usr/bin/nvim",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<leader>", "r", "r"],
-      "after": ["c", "i", "w", "<C-r>", "0", "<Esc>", "b"]
+      "before": [
+        "g",
+        "b"
+      ],
+      "commands": [
+        "editor.action.insertCursorBelow"
+      ]
     },
     {
-      "before": ["g", "g"],
+      "before": [
+        "<leader>",
+        "r",
+        "r"
+      ],
+      "after": [
+        "c",
+        "i",
+        "w",
+        "<C-r>",
+        "0",
+        "<Esc>",
+        "b"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "c"
+      ], // copy whole file
+      "commands": [
+        {
+          "command": ":% y +"
+        }
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "g"
+      ],
       "commands": [
         {
           "command": ":1"
@@ -65,27 +96,23 @@
       ]
     },
     {
-      "before": ["<leader>", "c"],
-      "commands": [
-        {
-          "command": "copyFilePath"
-        }
-      ]
-    },
-    {
-      "before": ["g", "s"],
+      "before": [
+        "g",
+        "s"
+      ],
       "commands": [
         {
           "command": ":w"
         }
       ]
-    }
+    },
   ],
   "vim.handleKeys": {
-    "<C-a>": false,
-    "<C-f>": false
+    "<C-a>": false, // select all
+    "<C-b>": false, // hide sidebar
+    "<C-f>": false, // find
+    "<C-k>": false // shortcut prefix
   },
-
   // sync
   "sync.gist": "0ad8b57b1308b6903822754295c25040",
   "sync.autoDownload": false,
@@ -95,18 +122,14 @@
   "sync.askGistName": false,
   "sync.removeExtensions": true,
   "sync.syncExtensions": true,
-
   // gitlens
   "gitlens.advanced.messages": {
     "suppressShowKeyBindingsNotice": true
   },
-  "gitlens.views.compare.files.layout": "list",
   "gitlens.views.search.files.layout": "list",
   "gitlens.views.repositories.files.layout": "tree",
-
-  // flow
-  "flow.useNPMPackagedFlow": true,
-
+  // prettier
+  "prettier.singleQuote": true,
   /****************
    * Language Specific
    ****************/
@@ -114,12 +137,80 @@
   "[markdown]": {
     "editor.quickSuggestions": true
   },
-  "markdown.extension.preview.autoShowPreviewToSide": true,
   "markdown.extension.toc.levels": "2..6",
-
+  "markdown.extension.preview.autoShowPreviewToSide": true,
   // javascript/typescript
+  "[javascript]": {
+    "editor.quickSuggestions": true
+  },
   "typescript.validate.enable": false,
   "javascript.validate.enable": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "eslint.packageManager": "yarn"
+  "eslint.packageManager": "yarn",
+  "jest.pathToJest": "",
+  "jest.debugMode": true,
+  "flow.pathToFlow": "",
+  "workbench.colorTheme": "CFML Dark",
+  "atlascode.jira.workingSite": {
+    "baseUrlSuffix": "atlassian.net"
+  },
+  "atlascode.jira.explorer.enabled": false,
+  "atlascode.jira.hover.enabled": false,
+  "atlascode.jira.todoIssues.enabled": false,
+  "atlascode.jira.statusbar.enabled": false,
+  "atlascode.bitbucket.issues.explorerEnabled": false,
+  "atlascode.bitbucket.issues.monitorEnabled": false,
+  "javascript.suggest.autoImports": false,
+  "javascript.format.enable": false,
+  "yaml.format.singleQuote": true,
+  "sync.forceUpload": true,
+  "yaml.schemas": {
+    "file:///home/gary/.vscode/extensions/atlassian.atlascode-2.4.10/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+  "search.showLineNumbers": true,
+  "files.associations": {
+    ".cflintrc": "json",
+    "*.snippet": "NGINX"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "terminal.integrated.allowChords": false,
+  "cSpell.userWords": [
+    "cdn",
+    "maxage",
+    "preflighted"
+  ],
+  "cSpell.allowCompoundWords": true,
+  "cSpell.enableFiletypes": [
+    "!asciidoc",
+    "!c",
+    "!cpp",
+    "!csharp",
+    "!css",
+    "!git-commit",
+    "!go",
+    "!handlebars",
+    "!haskell",
+    "!jade",
+    "!java",
+    "!javascript",
+    "!javascriptreact",
+    "!js",
+    "!json",
+    "!jsonc",
+    "!jsx",
+    "!less",
+    "!php",
+    "!pug",
+    "!python",
+    "!rust",
+    "!scala",
+    "!scss",
+    "!typescript",
+    "!typescriptreact",
+    "!yaml",
+    "!yml"
+  ]
 }
