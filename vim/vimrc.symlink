@@ -19,6 +19,9 @@ set laststatus=2
 
 " enable 256 colors in vim
 set t_Co=256
+
+" set mapping and key code delays, see https://www.johnhawthorn.com/2012/09/vi-escape-delays/
+set timeoutlen=1000 ttimeoutlen=0
 " ========== /General ==========
 
 

@@ -62,6 +62,11 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 
 
+Plugin 'prettier/vim-prettier'
+" '@format' or '@prettier' tag is not required for auto formatting
+let g:prettier#autoformat_require_pragma = 0
+" do auto formatting when there is a prettier config file
+let g:prettier#autoformat_config_present = 1
 " ====== /plugin on GitHub repo ====== 
 
 
