@@ -71,6 +71,9 @@ let g:prettier#autoformat_config_present = 1
 " fzf
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+
+" YouCompleteMe
+Plugin 'ycm-core/YouCompleteMe'
 " ====== /plugin on GitHub repo ====== 
 
 
