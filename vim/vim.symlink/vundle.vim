@@ -67,6 +67,10 @@ Plugin 'prettier/vim-prettier'
 let g:prettier#autoformat_require_pragma = 0
 " do auto formatting when there is a prettier config file
 let g:prettier#autoformat_config_present = 1
+
+" fzf
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 " ====== /plugin on GitHub repo ====== 
 
 
