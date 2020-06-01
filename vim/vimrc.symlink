@@ -22,11 +22,15 @@ set t_Co=256
 
 " set mapping and key code delays, see https://www.johnhawthorn.com/2012/09/vi-escape-delays/
 set timeoutlen=1000 ttimeoutlen=0
+
+set showcmd
 " ========== /General ==========
 
 
 
+" ========== Plugins ==========
 source ~/.vim/vundle.vim
+" ========== /Plugins ==========
 
 
 
@@ -91,10 +95,16 @@ set fileencodings=ucs-bom,utf-8,cp936
 
 
 " ========== Shortcuts ==========
-let mapleader=","
+let mapleader=" "
 
 " easy saving
-map gs :w<CR>
+map <leader>s :w<CR>
+
+" windows navigation
+map <leader>h :wincmd h<CR>
+map <leader>j :wincmd j<CR>
+map <leader>k :wincmd k<CR>
+map <leader>l :wincmd l<CR>
 " ========== /Shortcuts ==========
 
 
@@ -113,15 +123,6 @@ endif
 
 " copy whole file to clipboard
 map <leader>c :% y +<CR>
-
-" copy a word
-map <leader>w "+yt
-
-" copy to end of line
-map <leader>e "+y$
-
-" paste from clipboard
-map <leader>p "+p
 
 " paste from register, copy a word and use it to replace multiple other words
 map <leader>rr ciw<C-r>0<Esc>b
