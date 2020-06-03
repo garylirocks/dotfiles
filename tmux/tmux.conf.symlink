@@ -21,9 +21,10 @@ set-option -g history-limit 100000
 # =========================
 #   Window splitting - Pane selecting
 # =========================
-# split window
-bind-key | split-window -h 
-bind-key - split-window
+# split window, and the new pane and window inherit current working directory
+bind-key | split-window -h -c "#{pane_current_path}"
+bind-key - split-window -c "#{pane_current_path}"
+bind-key c new-window -c "#{pane_current_path}"
 
 # use alt + hjkl to select panes
 bind -n M-h select-pane -L
