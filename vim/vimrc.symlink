@@ -10,9 +10,7 @@ set autoindent
 " set paste
 
 " whether vi-compatible
-set nocompatible    " be iMproved, required by Vundle
-
-filetype off        " required by Vundle
+set nocompatible    " be iMproved
 
 " always show a status line
 set laststatus=2
@@ -29,7 +27,14 @@ set showcmd
 
 
 " ========== Plugins ==========
-source ~/.vim/vundle.vim
+" auto install vim-plug and plugins if not exist
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+source ~/.vim/plugins.vim
 " ========== /Plugins ==========
 
 
