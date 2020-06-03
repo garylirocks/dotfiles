@@ -42,6 +42,8 @@ bower_components/
 ##################
 # other
 ##################
+.TAGS
+
 # excluding tag file when using tar
 .tar-exclude-tag
 
@@ -60,17 +62,11 @@ __MACOSX
 *.mo
 
 
-# Magento
-# PATCH_SUPEE-*.sh
-
-
 # keep .gitkeep
 !.gitkeep
 
 
 # custom backup file extension for local
 *.localbak
-
 *.localbak.*
-
 *.localonly.*
