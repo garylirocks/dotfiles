@@ -17,7 +17,7 @@
 	co = checkout
 	st = status
 	b  = branch -a
-	l  = log --pretty=format:'%h %ad | %an | %s%d' --graph --date=short
+	l  = log --graph --all --date=short --pretty=format:'%h %ad | %an | %s%C(auto)%d%Creset' 
 	d  = diff
 	sh  = show --stat
 	t = tag --annotate
