@@ -33,7 +33,7 @@ ln $LN_OPTIONS $LNOTE_SRC ~/lnotes
 
 # user-dirs file
 echo 'Copy user-dirs.dirs'
-cp $CONFIG_SRC_HOME/config/user-dirs.dirs ~/.config/
+cp --interactive --verbose $CONFIG_SRC_HOME/config/user-dirs.dirs ~/.config/
 
 
 # terminator
@@ -44,15 +44,15 @@ ln $LN_OPTIONS $CONFIG_SRC_HOME/config/terminator/config ~/.config/terminator/co
 
 
 # link code projects
-ln -s --interactive --target-directory ~/code \
+ln -s --interactive --verbose --target-directory ~/code \
         $CODE_SRC/quickrefs \
         $CODE_SRC/nodejs
 
 # autostart
-ln -s --interactive --target-directory ~/.config/autostart/ \
-    $CONFIG_SRC_AUTOSTART/config/autostart/dropboxd.desktop \
-    $CONFIG_SRC_AUTOSTART/config/autostart/caps-as-escape-and-ctrl.desktop
+ln -s --interactive --verbose --target-directory ~/.config/autostart/ \
+    $CONFIG_SRC_AUTOSTART/dropboxd.desktop \
+    $CONFIG_SRC_AUTOSTART/caps-as-escape-and-ctrl.desktop
 
 # only required for Ubuntu 16.04 + X1C gen5
-# $CONFIG_SRC_AUTOSTART/config/autostart/trackpoint.desktop
+# $CONFIG_SRC_AUTOSTART/trackpoint.desktop
 
