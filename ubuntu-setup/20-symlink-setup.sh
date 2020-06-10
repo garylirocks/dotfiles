@@ -5,33 +5,31 @@ cd ~
 
 CONFIG_SRC=~/drop/config
 CONFIG_SRC_HOME=$CONFIG_SRC/home
+CONFIG_SRC_AUTOSTART=$CONFIG_SRC/home/config/autostart
+
 BIN_SRC=~/drop/code/bin
 LNOTE_SRC=~/drop/docs/notes/local-notes.md
 CODE_SRC=~/drop/code
 
-# link bin
-ln -s $BIN_SRC ~/bin
+LN_OPTIONS='-s --interactive --no-target-directory --verbose'
 
-# link code projects
-ln -s $CODE_SRC/quickrefs ~/code/
-ln -s $CODE_SRC/nodejs ~/code/
-ln -s ~/.dotfiles ~/code/
+# link bin
+ln $LN_OPTIONS $BIN_SRC ~/bin
 
 # link ssh configs
-ln -s $CONFIG_SRC_HOME/ssh-symlink ~/.ssh
+ln $LN_OPTIONS $CONFIG_SRC_HOME/ssh-symlink ~/.ssh
 
 # link AWS config
-ln -s $CONFIG_SRC_HOME/aws-symlink ~/.aws
-
+ln $LN_OPTIONS $CONFIG_SRC_HOME/aws-symlink ~/.aws
 
 # link fonts folder
-ln -s $CONFIG_SRC_HOME/fonts-symlink ~/.fonts
+ln $LN_OPTIONS $CONFIG_SRC_HOME/fonts-symlink ~/.fonts
 
 # link up hosts file
-sudo ln -s $CONFIG_SRC/hosts /etc/hosts
+sudo ln $LN_OPTIONS $CONFIG_SRC/hosts /etc/hosts
 
 # link local notes
-ln -s $LNOTE_SRC ~/lnotes
+ln $LN_OPTIONS $LNOTE_SRC ~/lnotes
 
 # user-dirs file
 echo 'Copy user-dirs.dirs'
@@ -42,12 +40,19 @@ cp $CONFIG_SRC_HOME/config/user-dirs.dirs ~/.config/
 if [ ! -d ~/.config/terminator ]; then
     mkdir ~/.config/terminator
 fi
-ln -s $CONFIG_SRC_HOME/config/terminator/config ~/.config/terminator/config
+ln $LN_OPTIONS $CONFIG_SRC_HOME/config/terminator/config ~/.config/terminator/config
 
+
+# link code projects
+ln -s --interactive --target-directory ~/code \
+        $CODE_SRC/quickrefs \
+        $CODE_SRC/nodejs
 
 # autostart
-ln -s $CONFIG_SRC_HOME/config/autostart/dropboxd.desktop ~/.config/autostart/dropboxd.desktop
-ln -s $CONFIG_SRC_HOME/config/autostart/capslockasctrl.desktop ~/.config/autostart/capslockasctrl.desktop
+ln -s --interactive --target-directory ~/.config/autostart/ \
+    $CONFIG_SRC_AUTOSTART/config/autostart/dropboxd.desktop \
+    $CONFIG_SRC_AUTOSTART/config/autostart/caps-as-escape-and-ctrl.desktop
 
-# only valid for Ubuntu 16.04 + X1C gen5
-# ln -s $CONFIG_SRC_HOME/config/autostart/trackpoint.desktop ~/.config/autostart/trackpoint.desktop
+# only required for Ubuntu 16.04 + X1C gen5
+# $CONFIG_SRC_AUTOSTART/config/autostart/trackpoint.desktop
+

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # tweak fonts, make 'CapsLock' act as 'Ctrl'
-sudo apt-get install gnome-tweak-tool
+sudo apt-get install xcape gnome-tweak-tool
 
 # utilities
 sudo apt-get install curl
