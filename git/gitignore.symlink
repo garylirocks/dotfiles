@@ -69,4 +69,5 @@ __MACOSX
 # custom backup file extension for local
 *.localbak
 *.localbak.*
+*.localonly
 *.localonly.*
