@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-" ====== plugin on GitHub repo ====== 
+" ====== plugin on GitHub repo ======
 
 " fuzzy path finder, use `Ctrl-p` to start searching files
 " Plug 'ctrlpvim/ctrlp.vim'
@@ -18,7 +18,6 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 " make nerdtree act like a true panel across all tabs
 Plug 'jistr/vim-nerdtree-tabs'
-
 " use `Ctrl-n` to toggle NERDTree
 map <C-n> :NERDTreeTabsToggle<CR>
 
@@ -28,7 +27,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " let g:airline_theme='simple'
 
+" theme
+Plug 'morhetz/gruvbox'
+set bg=dark
+autocmd VimEnter * colorscheme gruvbox
 
+" syntax checking
 Plug 'vim-syntastic/syntastic'
 
 
@@ -56,6 +60,7 @@ let g:prettier#autoformat_require_pragma = 0
 " do auto formatting when there is a prettier config file
 let g:prettier#autoformat_config_present = 1
 
+
 " fzf
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -65,7 +70,7 @@ nnoremap <leader>g :Rg<CR>
 
 " YouCompleteMe
 Plug 'ycm-core/YouCompleteMe'
-" ====== /plugin on GitHub repo ====== 
+" ====== /plugin on GitHub repo ======
 
 call plug#end()            " required
 
