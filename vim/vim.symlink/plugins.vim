@@ -3,7 +3,7 @@ call plug#begin('~/.vim/plugged')
 " ====== plugin on GitHub repo ====== 
 
 " fuzzy path finder, use `Ctrl-p` to start searching files
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 
 
 " file system explorer
@@ -59,6 +59,9 @@ let g:prettier#autoformat_config_present = 1
 " fzf
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+nnoremap <leader>f :FZF<CR>
+nnoremap <leader>g :Rg<CR>
+
 
 " YouCompleteMe
 Plug 'ycm-core/YouCompleteMe'
