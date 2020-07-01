@@ -17,13 +17,16 @@ LN_OPTIONS='-s --interactive --no-target-directory --verbose'
 ln $LN_OPTIONS $BIN_SRC ~/bin
 
 # link ssh configs
-ln $LN_OPTIONS $CONFIG_SRC_HOME/ssh-symlink ~/.ssh
+ln $LN_OPTIONS $CONFIG_SRC_HOME/_ssh ~/.ssh
 
 # link AWS config
-ln $LN_OPTIONS $CONFIG_SRC_HOME/aws-symlink ~/.aws
+ln $LN_OPTIONS $CONFIG_SRC_HOME/_aws ~/.aws
+
+# link Azure config
+ln $LN_OPTIONS $CONFIG_SRC_HOME/azure_config ~/.azure/config
 
 # link fonts folder
-ln $LN_OPTIONS $CONFIG_SRC_HOME/fonts-symlink ~/.fonts
+ln $LN_OPTIONS $CONFIG_SRC_HOME/_fonts ~/.fonts
 
 # link up hosts file
 sudo ln $LN_OPTIONS $CONFIG_SRC/hosts /etc/hosts
