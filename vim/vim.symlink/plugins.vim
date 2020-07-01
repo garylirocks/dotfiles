@@ -66,10 +66,20 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 nnoremap <leader>f :FZF<CR>
 nnoremap <leader>g :Rg<CR>
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 
 " YouCompleteMe
 Plug 'ycm-core/YouCompleteMe'
+
+
+" CoC
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+
+" Markdown Preview
+" If you have nodejs and yarn
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 " ====== /plugin on GitHub repo ======
 
 call plug#end()            " required
