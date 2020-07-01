@@ -185,7 +185,12 @@ export NVM_DIR="$HOME/.nvm"
 # ============================
 # aws
 # ============================
-[ -s "/usr/local/bin/aws_zsh_completer.sh" ] && \. "/usr/local/bin/aws_zsh_completer.sh" 
+[ -s "/usr/local/bin/aws_zsh_completer.sh" ] && \. "/usr/local/bin/aws_zsh_completer.sh"
+
+# ============================
+# azure
+# ============================
+[ -s "/etc/bash_completion.d/azure-cli" ] && \. "/etc/bash_completion.d/azure-cli"
 
 
 # >>> conda initialize >>>
