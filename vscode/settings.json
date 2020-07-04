@@ -44,7 +44,7 @@
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
-  "vim.leader": ",",
+  "vim.leader": " ",
   // "vim.enableNeovim": true,
   // "vim.neovimPath": "/usr/bin/nvim",
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -55,6 +55,15 @@
       ],
       "commands": [
         "editor.action.insertCursorBelow"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "n"
+      ],
+      "commands": [
+        "editor.action.addSelectionToNextFindMatch"
       ]
     },
     {
@@ -97,15 +106,15 @@
     },
     {
       "before": [
-        "g",
-        "s"
+        "<leader>",
+        "s",
       ],
       "commands": [
         {
           "command": ":w"
         }
       ]
-    },
+    }
   ],
   "vim.handleKeys": {
     "<C-a>": false, // select all
@@ -130,6 +139,10 @@
   "gitlens.views.repositories.files.layout": "tree",
   // prettier
   "prettier.singleQuote": true,
+  "markdown.extension.italic.indicator": "*",
+  "prettier.disableLanguages": [
+    "markdown"
+  ],
   /****************
    * Language Specific
    ****************/
@@ -138,10 +151,10 @@
     "editor.quickSuggestions": true
   },
   "markdown.extension.toc.levels": "2..6",
-  "markdown.extension.preview.autoShowPreviewToSide": true,
   // javascript/typescript
   "[javascript]": {
-    "editor.quickSuggestions": true
+    "editor.quickSuggestions": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "typescript.validate.enable": false,
   "javascript.validate.enable": false,
@@ -161,26 +174,23 @@
   "atlascode.bitbucket.issues.explorerEnabled": false,
   "atlascode.bitbucket.issues.monitorEnabled": false,
   "javascript.suggest.autoImports": false,
-  "javascript.format.enable": false,
   "yaml.format.singleQuote": true,
   "sync.forceUpload": true,
   "yaml.schemas": {
-    "file:///home/gary/.vscode/extensions/atlassian.atlascode-2.4.10/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///home/gary/.vscode/extensions/atlassian.atlascode-2.4.11/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "search.showLineNumbers": true,
   "files.associations": {
     ".cflintrc": "json",
     "*.snippet": "NGINX"
   },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "diffEditor.ignoreTrimWhitespace": false,
   "terminal.integrated.allowChords": false,
   "cSpell.userWords": [
     "cdn",
     "maxage",
-    "preflighted"
+    "preflighted",
+    "tmux"
   ],
   "cSpell.allowCompoundWords": true,
   "cSpell.enableFiletypes": [
@@ -212,5 +222,25 @@
     "!typescriptreact",
     "!yaml",
     "!yml"
-  ]
+  ],
+  "liveshare.featureSet": "insiders",
+  "markdown.extension.preview.autoShowPreviewToSide": true,
+  "editor.formatOnPaste": true,
+  "eslint.format.enable": true,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "workbench.editorAssociations": [
+    {
+      "viewType": "default",
+      "filenamePattern": "*.html"
+    }
+  ],
+  "editor.formatOnSave": true
 }
