@@ -12,6 +12,9 @@ set-option -g history-limit 100000
 # makes vim works properly in tmux
 #setw -g xterm-keys on
 #set-option -g default-terminal "screen-256color"
+
+# let tmux don't wait on escape key, pass it to vi
+set -s escape-time 0
 # =========================
 #   /General
 # =========================
@@ -62,7 +65,7 @@ bind-key -T copy-mode-vi 'y' send-keys -X copy-pipe-and-cancel "xclip -i -f -sel
 # =========================
 set -g status-bg black
 set -g status-fg white
-set -g status-left '#[fg=green]#H'  # show host name
+set -g status-left '#[fg=green]#H '  # show host name
 set -g status-right '%a %m-%d %H:%M' # show current time
 
 # Highlight active window
