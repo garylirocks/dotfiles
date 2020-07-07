@@ -25,6 +25,9 @@ set showcmd
 
 " show invisible characters
 set list!
+
+" fold
+set foldcolumn=1
 " ========== /General ==========
 
 
