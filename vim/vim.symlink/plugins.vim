@@ -65,8 +65,11 @@ let g:prettier#autoformat_config_present = 1
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 nnoremap <leader>f :FZF<CR>
-nnoremap <leader>g :Rg<CR>
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+" search current word under cursor
+nnoremap <silent> <Leader>g :Rg <C-R><C-W><CR>
+" search anything
+nnoremap <leader>gg :Rg<CR>
 
 
 " YouCompleteMe
@@ -80,6 +83,12 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Markdown Preview
 " If you have nodejs and yarn
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+let g:mkdp_browser = 'firefox'
+
+
+" Git
+Plug 'tpope/vim-fugitive'
+nnoremap <leader>gs :G<CR>
 " ====== /plugin on GitHub repo ======
 
 call plug#end()            " required
