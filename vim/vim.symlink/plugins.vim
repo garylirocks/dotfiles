@@ -64,20 +64,21 @@ let g:prettier#autoformat_config_present = 1
 " fzf
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-nnoremap <leader>f :FZF<CR>
+nnoremap <C-p> :FZF<CR>
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 " search current word under cursor
-nnoremap <silent> <Leader>g :Rg <C-R><C-W><CR>
+nnoremap <silent> <Leader>gg :Rg <C-R><C-W><CR>
 " search anything
-nnoremap <leader>gg :Rg<CR>
+nnoremap <leader>g :Rg<CR>
 
 
 " YouCompleteMe
-Plug 'ycm-core/YouCompleteMe'
+" Plug 'ycm-core/YouCompleteMe'
 
 
 " CoC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+source ~/.vim/coc.vim
 
 
 " Markdown Preview
