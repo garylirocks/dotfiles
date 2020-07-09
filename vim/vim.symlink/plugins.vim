@@ -8,12 +8,11 @@ call plug#begin('~/.vim/plugged')
 
 " file system explorer
 Plug 'scrooloose/nerdtree'
-
 " start NERDTree automatically when no file specified or opening a directory
-autocmd StdinReadPre * let s:std_in=1
+" autocmd StdinReadPre * let s:std_in=1
 
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 
 " make nerdtree act like a true panel across all tabs
@@ -90,6 +89,12 @@ let g:mkdp_browser = 'firefox'
 " Git
 Plug 'tpope/vim-fugitive'
 nnoremap <leader>gs :G<CR>
+
+" start screen
+Plug 'mhinz/vim-startify'
+
+" change to project root
+Plug 'airblade/vim-rooter'
 " ====== /plugin on GitHub repo ======
 
 call plug#end()            " required
