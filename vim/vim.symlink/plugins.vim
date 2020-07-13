@@ -88,7 +88,7 @@ let g:mkdp_browser = 'firefox'
 
 " Git
 Plug 'tpope/vim-fugitive'
-nnoremap <leader>gs :G<CR>
+nnoremap <leader>gs :tab G<CR>
 
 " start screen
 Plug 'mhinz/vim-startify'
