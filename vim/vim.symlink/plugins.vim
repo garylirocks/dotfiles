@@ -67,6 +67,8 @@ nnoremap <C-p> :FZF<CR>
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 " search current word under cursor
 nnoremap <silent> <Leader>gg :Rg <C-R><C-W><CR>
+" buffers
+nnoremap <leader>b :Buffers<CR>
 " search anything
 nnoremap <leader>g :Rg<CR>
 
