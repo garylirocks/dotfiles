@@ -14,3 +14,6 @@ git/gitconfig.local.symlink
 **/vim.symlink/autoload/
 **/vim.symlink/plugin/
 **/vim.symlink/plugged/
+
+tmux/tmux.symlink/*
+!.gitkeep

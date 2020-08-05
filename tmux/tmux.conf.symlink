@@ -77,3 +77,32 @@ set -g visual-activity on
 # =========================
 #   /Set status bar
 # =========================
+
+
+
+# =========================
+#   Plugins
+# =========================
+# List of plugins
+# in tmux
+#   `<prefix> + I` to install plugins
+#   `<prefix> + U` to update
+set -g @plugin 'tmux-plugins/tpm'
+
+# Restore tmux environment after system restart
+#   `<prefix> + Ctrl - s` save
+#   `<prefix> + Ctrl - r` restore
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+
+
+# Automatic restoring and continuous saving
+set -g @plugin 'tmux-plugins/tmux-continuum'
+# enable automatic restore
+set -g @continuum-restore 'on'
+
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
+# =========================
+#   /Plugins
+# =========================
