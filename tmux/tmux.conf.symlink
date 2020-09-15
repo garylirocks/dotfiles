@@ -15,6 +15,9 @@ set-option -g history-limit 100000
 
 # let tmux don't wait on escape key, pass it to vi
 set -s escape-time 0
+
+# synchronize commands to all panes in a window
+bind C-g set-window-option synchronize-panes
 # =========================
 #   /General
 # =========================
