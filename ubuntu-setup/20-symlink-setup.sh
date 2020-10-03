@@ -22,6 +22,9 @@ ln $LN_OPTIONS $CONFIG_SRC_HOME/_ssh ~/.ssh
 # link AWS config
 ln $LN_OPTIONS $CONFIG_SRC_HOME/_aws ~/.aws
 
+# link npm config
+ln $LN_OPTIONS $CONFIG_SRC_HOME/npmrc ~/.npmrc
+
 # link Azure config
 ln $LN_OPTIONS $CONFIG_SRC_HOME/azure_config ~/.azure/config
 
