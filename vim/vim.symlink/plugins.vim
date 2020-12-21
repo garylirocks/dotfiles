@@ -96,7 +96,7 @@ nnoremap <leader>gs :tab G<CR>
 Plug 'mhinz/vim-startify'
 
 " change to project root
-Plug 'airblade/vim-rooter'
+" Plug 'airblade/vim-rooter'
 " ====== /plugin on GitHub repo ======
 
 call plug#end()            " required
