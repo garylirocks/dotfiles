@@ -8,7 +8,6 @@ CONFIG_SRC_HOME=$CONFIG_SRC/home
 CONFIG_SRC_AUTOSTART=$CONFIG_SRC/home/config/autostart
 
 BIN_SRC=~/drop/code/bin
-LNOTE_SRC=~/drop/docs/notes/local-notes.md
 CODE_SRC=~/drop/code
 
 LN_OPTIONS='-s --interactive --no-target-directory --verbose'
@@ -26,6 +25,9 @@ ln $LN_OPTIONS $CONFIG_SRC_HOME/_aws ~/.aws
 ln $LN_OPTIONS $CONFIG_SRC_HOME/npmrc ~/.npmrc
 
 # link Azure config
+if [ ! -d ~/.azure ]; then
+    mkdir ~/.azure
+fi
 ln $LN_OPTIONS $CONFIG_SRC_HOME/azure_config ~/.azure/config
 
 # link fonts folder
@@ -33,9 +35,6 @@ ln $LN_OPTIONS $CONFIG_SRC_HOME/_fonts ~/.fonts
 
 # link up hosts file
 sudo ln $LN_OPTIONS $CONFIG_SRC/hosts /etc/hosts
-
-# link local notes
-ln $LN_OPTIONS $LNOTE_SRC ~/lnotes
 
 # user-dirs file
 echo 'Copy user-dirs.dirs'
@@ -55,6 +54,9 @@ ln -s --interactive --verbose --target-directory ~/code \
         $CODE_SRC/nodejs
 
 # autostart
+if [ ! -d ~/.config/autostart ]; then
+    mkdir ~/.config/autostart
+fi
 ln -s --interactive --verbose --target-directory ~/.config/autostart/ \
     $CONFIG_SRC_AUTOSTART/dropboxd.desktop \
     $CONFIG_SRC_AUTOSTART/caps-as-escape-and-ctrl.desktop
