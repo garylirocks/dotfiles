@@ -17,6 +17,7 @@ ln $LN_OPTIONS $BIN_SRC ~/bin
 
 # link ssh configs
 ln $LN_OPTIONS $CONFIG_SRC_HOME/_ssh ~/.ssh
+chmod 600 ~/.ssh/*
 
 # link AWS config
 ln $LN_OPTIONS $CONFIG_SRC_HOME/_aws ~/.aws
