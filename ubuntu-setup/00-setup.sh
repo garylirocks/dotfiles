@@ -9,8 +9,10 @@ sudo apt-get install terminator tmux
 sudo apt-get install vim-gnome nvim exuberant-ctags
 sudo apt-get install xclip
 sudo apt-get install markdown
-sudo apt-get install inkscape shutter graphviz
+sudo apt-get install inkscape graphviz
 sudo apt-get install ascii
+
+snap install shutter
 
 # flash
 ## Enable "Ubuntu Partner" in "Software & Updates" first
