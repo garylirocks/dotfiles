@@ -72,7 +72,10 @@ set -g status-left '#[fg=green]#H '  # show host name
 set -g status-right '%a %m-%d %H:%M' # show current time
 
 # Highlight active window
-# set-window-option -g window-status-current-bg red
+setw -g window-status-current-style 'bg=#CC8833,bright'
+
+# Windows with activity
+setw -g window-status-activity-style "bg=#666666"
 
 # Set window notifications
 setw -g monitor-activity on
