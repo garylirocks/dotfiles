@@ -16,7 +16,7 @@
 	c = commit
 	co = checkout
 	st = status
-	b  = branch -a
+	b   = branch
 	l  = log --graph --date=short --pretty=format:'%h %ad | %an | %s%C(auto)%d%Creset'
 	la  = log --graph --all --date=short --pretty=format:'%h %ad | %an | %s%C(auto)%d%Creset'
 	d  = diff
