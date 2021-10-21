@@ -2,7 +2,7 @@
 sudo apt-get update
 
 # install packages to allow apt to use a repository over HTTPS
-sudo apt-get install \
+sudo apt-get install -y \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -20,6 +20,6 @@ sudo add-apt-repository \
 sudo apt-get update
 
 # install docker community version
-sudo apt-get install docker-ce
+sudo apt-get install -y docker-ce
 
 sudo usermod -a -G docker $(id --user --name)

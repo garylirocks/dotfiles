@@ -1,4 +1,15 @@
-# holman does dotfiles
+# dotfiles
+
+## System setup
+
+```sh
+# install tools
+script/install
+
+# add symlinks to home folder
+script/bootstrap
+```
+
 
 Your dotfiles are how you personalize your system. These are mine.
 

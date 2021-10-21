@@ -3,6 +3,7 @@ git/gitconfig.local.symlink
 **/vim.symlink/autoload/
 **/vim.symlink/plugin/
 **/vim.symlink/plugged/
+**/vim.symlink/.netrwhist
 
 tmux/tmux.symlink/*
 !.gitkeep

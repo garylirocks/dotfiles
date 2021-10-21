@@ -10,7 +10,7 @@ CONFIG_SRC_AUTOSTART=$CONFIG_SRC/home/config/autostart
 BIN_SRC=~/drop/code/bin
 CODE_SRC=~/drop/code
 
-LN_OPTIONS='-s --interactive --no-target-directory --verbose'
+LN_OPTIONS='--symbolic --interactive --no-target-directory --verbose'
 
 # link bin
 ln $LN_OPTIONS $BIN_SRC ~/bin

@@ -1,21 +1,12 @@
 #!/bin/sh
 
-# tweak fonts, make 'CapsLock' act as 'Ctrl'
-sudo apt-get install xcape gnome-tweak-tool
+# xcape gnome-tweak-tool: tweak fonts, make 'CapsLock' act as 'Ctrl'
+sudo apt-get install -y xcape gnome-tweak-tool \
+                        curl terminator \
+                        ascii exuberant-ctags xclip markdown \
+                        inkscape graphviz
 
-# utilities
-sudo apt-get install curl
-sudo apt-get install terminator tmux
-sudo apt-get install vim vim-gui-common	# vim-gui-common for xterm_clipboard support
-sudo apt-get install exuberant-ctags
-sudo apt-get install xclip
-sudo apt-get install markdown
-sudo apt-get install inkscape graphviz
-sudo apt-get install ascii
-
-snap install shutter
-
-# flash
+# Flash
 ## Enable "Ubuntu Partner" in "Software & Updates" first
 # sudo apt-get install adobe-flashplugin
 
