@@ -1,10 +1,12 @@
 #!/bin/sh
 
-# xcape gnome-tweak-tool: tweak fonts, make 'CapsLock' act as 'Ctrl'
-sudo apt-get install -y xcape gnome-tweak-tool \
+# xcape: make 'CapsLock' act as 'Ctrl'
+sudo apt-get install -y xcape \
                         curl terminator \
                         ascii exuberant-ctags xclip markdown \
                         inkscape graphviz
+
+# sudo apt-get install -y gnome-tweak-tool
 
 # Flash
 ## Enable "Ubuntu Partner" in "Software & Updates" first
