@@ -71,7 +71,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240"
 # 10ms for key sequences
 KEYTIMEOUT=1
 
-plugins=(git vi-mode z zsh-autosuggestions colored-man-pages zsh-syntax-highlighting)
+plugins=(colored-man-pages git git-auto-fetch vi-mode z zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
