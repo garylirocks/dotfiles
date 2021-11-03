@@ -237,3 +237,7 @@ export NVM_DIR="$HOME/.nvm"
 # ============================
 [ -s "/etc/bash_completion.d/azure-cli" ] && \. "/etc/bash_completion.d/azure-cli"
 
+if [[ -d $HOME/.terraform.d/ ]]; then
+  autoload -U +X bashcompinit && bashcompinit
+  complete -o nospace -C /usr/bin/terraform terraform
+fi
