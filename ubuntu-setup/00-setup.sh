@@ -4,7 +4,9 @@
 sudo apt-get install -y xcape \
                         curl terminator \
                         ascii exuberant-ctags xclip markdown \
-                        inkscape graphviz
+                        inkscape graphviz \
+                        rename
+
 
 # sudo apt-get install -y gnome-tweak-tool
 
