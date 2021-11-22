@@ -3,7 +3,7 @@
 # xcape: make 'CapsLock' act as 'Ctrl'
 sudo apt-get install -y xcape \
                         curl terminator \
-                        ascii exuberant-ctags xclip markdown \
+                        ascii exuberant-ctags xclip markdown jq \
                         inkscape graphviz \
                         rename
 
