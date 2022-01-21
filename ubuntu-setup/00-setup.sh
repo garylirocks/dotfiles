@@ -1,5 +1,7 @@
 #!/bin/sh
 
+sudo apt-get update
+
 # xcape: make 'CapsLock' act as 'Ctrl'
 sudo apt-get install -y xcape \
                         curl terminator \
