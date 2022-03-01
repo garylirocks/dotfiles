@@ -134,12 +134,12 @@ fpath=(~/.zsh/completion $fpath)
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/code
 
-# Stash your environment variables in ~/.localrc. This means they'll stay out
+# Stash your environment variables in ~/local/zshrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
 # you'll have access to them in your scripts.
-if [[ -a ~/.localrc ]]
+if [[ -a ~/local/zshrc ]]
 then
-  source ~/.localrc
+  source ~/local/zshrc
 fi
 
 # all of our zsh files
