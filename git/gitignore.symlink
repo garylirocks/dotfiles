@@ -28,7 +28,6 @@ node_modules/
 # bower
 bower_components/
 
-
 # sass
 .sass-cache/
 
@@ -36,6 +35,9 @@ bower_components/
 *.less.cache
 
 *.css.map
+
+# Terraform
+**/.terraform/*
 
 
 ##################
