@@ -18,3 +18,12 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # pre-commit, pip etc
 # ============================
 export PATH="$HOME/.local/bin:$PATH"
+
+
+# ============================
+# misc
+# ============================
+if [[ -d ~/local/bin ]]; then
+  export PATH="$HOME/local/bin:$PATH"
+fi
+export PATH="$HOME/.local/bin:$PATH"
