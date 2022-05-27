@@ -1,6 +1,8 @@
 #!/bin/sh
 
-sudo apt-get update
+if [[ -z $_APT_UPDATED ]]; then
+  sudo apt-get update
+fi
 
 # xcape: make 'CapsLock' act as 'Ctrl'
 sudo apt-get install -y xcape \
