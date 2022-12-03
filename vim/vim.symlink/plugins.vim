@@ -79,6 +79,7 @@ nnoremap <leader>g :Rg<CR>
 
 " CoC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:coc_disable_startup_warning = 1
 source ~/.vim/coc.vim
 
 

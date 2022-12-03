@@ -46,11 +46,6 @@ fi
 ln $LN_OPTIONS $CONFIG_SRC_HOME/config/terminator/config ~/.config/terminator/config
 
 
-# link code projects
-ln -s --interactive --verbose --target-directory ~/code \
-        $CODE_SRC/quickrefs \
-        $CODE_SRC/nodejs
-
 # autostart
 if [ ! -d ~/.config/autostart ]; then
     mkdir ~/.config/autostart
