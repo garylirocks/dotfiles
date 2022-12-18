@@ -7,17 +7,25 @@ CONFIG_SRC=~/drop/config
 CONFIG_SRC_HOME=$CONFIG_SRC/home
 CONFIG_SRC_AUTOSTART=$CONFIG_SRC/home/config/autostart
 
-BIN_SRC=~/drop/code/bin
-CODE_SRC=~/drop/code
+BIN_SRC=~/drop/bin
 
 LN_OPTIONS='--symbolic --interactive --no-target-directory --verbose'
 
 # link bin
 ln $LN_OPTIONS $BIN_SRC ~/bin
 
-# link ssh configs
-ln $LN_OPTIONS $CONFIG_SRC_HOME/_ssh ~/.ssh
+# link SSH configs
+if which wsl.exe; then
+  # in WSL, you can't change permissions of files symlinked from Windows
+  # so we copy the files in, you need to keep files in sync manually
+  ln $LN_OPTIONS $CONFIG_SRC_HOME/_ssh ~/.ssh-symlink-to-windows
+  cp -r ~/.ssh-symlink-to-windows/* ~/.ssh/
+else
+  # link ssh configs
+  ln $LN_OPTIONS $CONFIG_SRC_HOME/_ssh ~/.ssh
+fi
 chmod 600 ~/.ssh/*
+
 
 # link AWS config
 ln $LN_OPTIONS $CONFIG_SRC_HOME/_aws ~/.aws
@@ -54,6 +62,4 @@ ln -s --interactive --verbose --target-directory ~/.config/autostart/ \
     $CONFIG_SRC_AUTOSTART/dropboxd.desktop \
     $CONFIG_SRC_AUTOSTART/caps-as-escape-and-ctrl.desktop
 
-# only required for Ubuntu 16.04 + X1C gen5
-# $CONFIG_SRC_AUTOSTART/trackpoint.desktop
 
