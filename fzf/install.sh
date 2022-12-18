@@ -1,8 +1,6 @@
-sudo apt-get install fzf
+# NOTE: install through APT may get you an outdated version
+# Using git to get the latest version
 
-FZF_CONFIG=~/.fzf.zsh
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
-if ! [ -f "$FZF_CONFIG" ]; then
-  touch "$FZF_CONFIG"
-fi
-
+~/.fzf/install

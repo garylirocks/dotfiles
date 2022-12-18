@@ -9,6 +9,7 @@ if [ -f ~/.fzf.zsh ]; then
     export FZF_DEFAULT_COMMAND='rg --files --hidden --glob="!.git/"'
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+    # A custom function to help jump to a custom list of directories
     cc() {
         # load local specific quick dirs
         if [ -f ~/local/fzf-local-quick-dirs.sh ]; then
