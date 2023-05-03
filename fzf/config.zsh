@@ -9,6 +9,12 @@ if [ -f ~/.fzf.zsh ]; then
     export FZF_DEFAULT_COMMAND='rg --files --hidden --glob="!.git/"'
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+    # set default options
+    # --border   -> show borders
+    # --reverse  -> input at top
+    # --no-sort  -> latest first
+    export FZF_DEFAULT_OPTS="--border --reverse --no-sort"
+
     # A custom function to help jump to a custom list of directories
     cc() {
         # load local specific quick dirs
