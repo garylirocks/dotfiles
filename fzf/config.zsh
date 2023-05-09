@@ -13,7 +13,7 @@ if [ -f ~/.fzf.zsh ]; then
     # --border   -> show borders
     # --reverse  -> input at top
     # --no-sort  -> latest first
-    export FZF_DEFAULT_OPTS="--border --reverse --no-sort"
+    export FZF_DEFAULT_OPTS="--border --reverse"
 
     # A custom function to help jump to a custom list of directories
     cc() {
