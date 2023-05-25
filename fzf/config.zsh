@@ -12,7 +12,6 @@ if [ -f ~/.fzf.zsh ]; then
     # set default options
     # --border   -> show borders
     # --reverse  -> input at top
-    # --no-sort  -> latest first
     export FZF_DEFAULT_OPTS="--border --reverse"
 
     # A custom function to help jump to a custom list of directories
