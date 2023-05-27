@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 # create symlinks pointing to resources in Dropbox
 
 cd ~
@@ -17,9 +17,10 @@ ln $LN_OPTIONS $BIN_SRC ~/bin
 # link SSH configs
 if which wsl.exe; then
   # in WSL, you can't change permissions of files symlinked from Windows
-  # so we copy the files in, you need to keep files in sync manually
+  # so we copy the files
+  # make sure you add/change stuff in "~/.ssh-symlink-to-windows"
   ln $LN_OPTIONS $CONFIG_SRC_HOME/_ssh ~/.ssh-symlink-to-windows
-  cp -r ~/.ssh-symlink-to-windows/* ~/.ssh/
+  bash ~/.ssh-symlink-to-windows/copy-ssh-configs.sh ~/.ssh-symlink-to-windows
 else
   # link ssh configs
   ln $LN_OPTIONS $CONFIG_SRC_HOME/_ssh ~/.ssh
