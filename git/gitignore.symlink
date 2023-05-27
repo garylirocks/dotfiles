@@ -38,6 +38,7 @@ bower_components/
 
 # Terraform
 **/.terraform/*
+*.tfstate
 
 
 ##################
