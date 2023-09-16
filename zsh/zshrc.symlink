@@ -115,7 +115,7 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-source $HOME/drop/config/home/aliases
+source $HOME/linux_sync/config/home/aliases
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"

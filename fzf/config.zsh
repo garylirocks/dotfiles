@@ -21,9 +21,8 @@ if [ -f ~/.fzf.zsh ]; then
             source ~/local/fzf-local-quick-dirs.sh
         fi
 
-        local quickDirs=~/drop/config/quickDirs.txt
+        local quickDirs=~/linux_sync/config/quickDirs.txt
         local dir=`echo $LOCAL_FZF_QUICK_DIRS | paste -d '\n' -s $quickDirs - | fzf --height 10 --layout reverse | sed "s|~|$HOME|"`
         cd $dir
     }
 fi
-

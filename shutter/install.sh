@@ -3,5 +3,4 @@ sudo apt install -y shutter
 
 mkdir -p ~/downloads/screenshots/
 
-ln --symbolic --interactive --verbose --target-directory ~/.shutter/ ~/drop/config/home/_shutter/profiles/
-
+ln --symbolic --interactive --verbose --target-directory ~/.shutter/ ~/linux_sync/config/home/_shutter/profiles/

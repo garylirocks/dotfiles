@@ -1,13 +1,13 @@
 #!/bin/bash
-# create symlinks pointing to resources in Dropbox
+# create symlinks pointing to resources in linux_sync
 
 cd ~
 
-CONFIG_SRC=~/drop/config
+CONFIG_SRC=~/linux_sync/config
 CONFIG_SRC_HOME=$CONFIG_SRC/home
 CONFIG_SRC_AUTOSTART=$CONFIG_SRC/home/config/autostart
 
-BIN_SRC=~/drop/bin
+BIN_SRC=~/linux_sync/bin
 
 LN_OPTIONS='--symbolic --interactive --no-target-directory --verbose'
 
@@ -62,5 +62,3 @@ fi
 ln -s --interactive --verbose --target-directory ~/.config/autostart/ \
     $CONFIG_SRC_AUTOSTART/dropboxd.desktop \
     $CONFIG_SRC_AUTOSTART/caps-as-escape-and-ctrl.desktop
-
-
