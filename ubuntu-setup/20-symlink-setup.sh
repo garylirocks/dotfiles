@@ -12,7 +12,9 @@ BIN_SRC=~/linux_sync/bin
 LN_OPTIONS='--symbolic --interactive --no-target-directory --verbose'
 
 # link bin
-ln $LN_OPTIONS $BIN_SRC ~/bin
+if [ ! -d "$BIN_SRC" ]; then
+  ln $LN_OPTIONS $BIN_SRC ~/bin
+fi
 
 # link SSH configs
 if which wsl.exe; then
@@ -60,5 +62,4 @@ if [ ! -d ~/.config/autostart ]; then
     mkdir ~/.config/autostart
 fi
 ln -s --interactive --verbose --target-directory ~/.config/autostart/ \
-    $CONFIG_SRC_AUTOSTART/dropboxd.desktop \
     $CONFIG_SRC_AUTOSTART/caps-as-escape-and-ctrl.desktop
