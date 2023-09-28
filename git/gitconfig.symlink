@@ -40,3 +40,5 @@
 	defaultBranch = main
 [credential "https://github.com"]
 	useHttpPath = false
+[pull]
+	rebase = true
