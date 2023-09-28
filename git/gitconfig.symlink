@@ -38,3 +38,5 @@
 [init]
 	templatedir = /home/gary/.git/templates/
 	defaultBranch = main
+[credential "https://github.com"]
+	useHttpPath = false
