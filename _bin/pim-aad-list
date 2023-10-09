@@ -1,0 +1,19 @@
+#!/bin/env pwsh
+
+Write-Host "Log in"
+Connect-MgGraph -Scopes "RoleManagement.ReadWrite.Directory" -NoWelcome
+
+Write-Host "Get my principal ID"
+$myUpn=(Get-MgContext).Account
+$myPrincipalId=(Get-MgUser -Filter "UserPrincipalName eq '$myUpn'").Id
+
+Write-Host "List active assignments"
+Get-MgRoleManagementDirectoryRoleAssignmentSchedule -Filter "principalId eq '$myPrincipalId'" `
+  | Select DirectoryScopeId,
+            AssignmentType,
+            @{
+              name='Role';
+              expression={
+                (Get-MgDirectoryRole -Filter "RoleTemplateId eq '$($_.RoleDefinitionId)'").DisplayName
+              }
+            }

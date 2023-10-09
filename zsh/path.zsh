@@ -1,21 +1,19 @@
+# ============================
+# dotfiles
+# ============================
+if [[ -d ~/.dotfiles/_bin ]]; then
+  export PATH="$HOME/.dotfiles/_bin:$PATH"
+fi
 
-# ============================
-# Postman
-# ============================
-# export PATH="/opt/Postman/:$PATH"
 
 # ============================
 # yarn
 # ============================
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# ============================
-# conda
-# ============================
-# export PATH="$HOME/miniconda3/bin:$PATH"
 
 # ============================
-# pre-commit, pip etc
+# python tools, pip, etc
 # ============================
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -26,4 +24,3 @@ export PATH="$HOME/.local/bin:$PATH"
 if [[ -d ~/local/bin ]]; then
   export PATH="$HOME/local/bin:$PATH"
 fi
-export PATH="$HOME/.local/bin:$PATH"

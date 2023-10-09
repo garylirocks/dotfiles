@@ -1,0 +1,4 @@
+#!/bin/env bash
+
+echo "This is a test from $ZSH/_bin/"
+echo "Your setup is working!"
