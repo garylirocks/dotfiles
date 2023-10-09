@@ -16,6 +16,11 @@ function OnViModeChange {
 }
 Set-PSReadLineOption -ViModeIndicator Script -ViModeChangeHandler $Function:OnViModeChange
 
+# set shortcuts
+Set-PSReadLineKeyHandler -Chord 'ctrl+w' -Function BackwardDeleteWord -ViMode Insert
+Set-PSReadLineKeyHandler -Chord 'ctrl+k' -Function CancelLine -ViMode Insert
+Set-PSReadLineKeyHandler -Chord 'ctrl+k' -Function CancelLine -ViMode Command
+
 
 #################
 # init oh-my-posh
