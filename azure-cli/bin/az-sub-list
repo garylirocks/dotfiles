@@ -1,0 +1,22 @@
+#!/bin/env bash
+
+# List all accounts(subscriptions), and highlight the default one
+#
+# The original command is like
+#   az account list -otable --query "[].{Default: isDefault, Name: name, ID: id}" | sed '/True/s/.*/printf "\\e[32m\0\\e[0m"/e'
+# It needs to be quoted properly
+az account list -otable --query "[].{Default: isDefault, Name: name, ID: id}" | sed '/True/s/.*/printf "\\e[32m\0\\e[0m"/e'
+
+
+# Save the list to a JSON file
+# So it could be utilized by other scripts
+subListFile="subscription-list.localonly.json"
+az account list --query="[].{name:name, id:id}" -ojson > $subListFile
+
+echo "Subscription list saved to: " "$(readlink -f $subListFile)"
+echo ''
+echo 'You can PIM up with commands like:'
+echo ''
+echo 'az-pim sub-name "Contributor" 1 "Deploy stuff" "JIRA" "TICKET-12345"'
+echo 'az-pim sub-name "Reader" 1'
+echo ''

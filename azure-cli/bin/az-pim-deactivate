@@ -1,0 +1,43 @@
+#!/bin/env bash
+
+DIR=$( cd "$( dirname "$0" )" && pwd )
+
+# shellcheck disable=SC1091
+source "${DIR}/../data/_util.sh"
+
+__deactivate_pim_role() {
+  local scopeName=$1
+  local roleName=${2:-Reader}
+  local scope
+  local roleAssignmentScheduleRequestName
+  local roleId
+  local principalId
+  local body
+
+  scope=$(__get_scope_id "${scopeName}")
+  roleAssignmentScheduleRequestName=$(uuidgen)
+  roleId=$(az role definition list --name "${roleName}" --query '[0].id' -otsv)
+  principalId=$(az ad signed-in-user show --query id -otsv)
+
+  echo "Deactivating ${roleName} on ${scopeName} (${scope})"
+  echo ""
+
+  body=$(cat <<EOT
+{
+  "Properties": {
+    "RoleDefinitionId": "${roleId}",
+    "PrincipalId": "${principalId}",
+    "RequestType": "SelfDeactivate"
+  }
+}
+EOT
+)
+
+  az rest --method PUT \
+    --url "https://management.azure.com${scope}/providers/Microsoft.Authorization/roleAssignmentScheduleRequests/${roleAssignmentScheduleRequestName}?api-version=2020-10-01" \
+    --body "${body}" \
+    --query "{Role: properties.expandedProperties.roleDefinition.displayName, Resource: properties.expandedProperties.scope.displayName, Status: properties.status}" \
+    --output table
+}
+
+__deactivate_pim_role "${@}"

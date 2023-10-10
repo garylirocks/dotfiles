@@ -1,3 +1,5 @@
+*.localonly.*
+
 git/gitconfig.local.symlink
 
 **/vim.symlink/autoload/

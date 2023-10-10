@@ -1,0 +1,80 @@
+#!/bin/env bash
+
+# Usage examples:
+# Scope could be name of management group or subscription
+# Some scope requries tickets number, some don't
+#
+# az-pim mg-name "Contributor" 1 "Deploy stuff" "JIRA" "TICKET-12345"
+# az-pim sub-name "Reader" 1
+
+DIR=$( cd "$( dirname "$0" )" && pwd )
+
+# shellcheck disable=SC1091
+source "${DIR}/../data/_util.sh"
+
+if [[ -z $AZURE_DEFAULT_SUBSCRIPTION_NAME ]]; then
+  echo "Please set AZURE_DEFAULT_SUBSCRIPTION_NAME"
+  echo "Put following line in a local-only profile file (eg. ~/local/zshrc):"
+  echo ""
+  echo "export AZURE_DEFAULT_SUBSCRIPTION_NAME=sub-example"
+  exit 1
+fi
+
+__activate_pim_role() {
+  local scopeName=$1
+  local roleName=${2:-Reader}
+  local durationInHours=$3
+  local justification=${4:-Discovery}
+  local ticketSystem=${5:-JIRA}
+  local ticketNumber=${6:-}
+  local scope
+  local roleAssignmentScheduleRequestName
+  local roleId
+  local principalId
+  local now
+  local body
+
+  # switch to Prod first, so you can read role id
+  az account set -s "$AZURE_DEFAULT_SUBSCRIPTION_NAME"
+
+  scope=$(__get_scope_id "${scopeName}")
+  roleAssignmentScheduleRequestName=$(uuidgen)
+  roleId=$(az role definition list --name "${roleName}" --query '[0].id' -otsv)
+  principalId=$(az ad signed-in-user show --query id -otsv)
+  now=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+
+  echo "Activate \"${roleName}\" for ${durationInHours} hour(s) on ${scopeName} (${scope})"
+  echo ""
+
+  body=$(cat <<EOT
+{
+  "Properties": {
+    "RoleDefinitionId": "${roleId}",
+    "PrincipalId": "${principalId}",
+    "RequestType": "SelfActivate",
+    "Justification": "${justification}",
+    "TicketInfo": {
+      "TicketSystem": "${ticketSystem}",
+      "TicketNumber": "${ticketNumber}"
+    },
+    "ScheduleInfo": {
+      "StartDateTime": "${now}",
+      "Expiration": {
+        "Type": "AfterDuration",
+        "EndDateTime": null,
+        "Duration": "PT${durationInHours}H"
+      }
+    }
+  }
+}
+EOT
+)
+
+  az rest --method PUT \
+    --url "https://management.azure.com${scope}/providers/Microsoft.Authorization/roleAssignmentScheduleRequests/${roleAssignmentScheduleRequestName}?api-version=2020-10-01" \
+    --body "${body}" \
+    --query "{Role: properties.expandedProperties.roleDefinition.displayName, Resource: properties.expandedProperties.scope.displayName, Type: properties.assignmentType, Expiration: properties.scheduleInfo.expiration.duration Ticket: properties.ticketInfo.ticketNumber }" \
+    --output table | sed -E 's#PT([0-9]+)H#\1   #'
+}
+
+__activate_pim_role "${@}"

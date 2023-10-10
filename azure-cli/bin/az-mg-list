@@ -1,0 +1,22 @@
+#!/bin/env bash
+
+DIR=$( cd "$( dirname "$0" )" && pwd )
+
+mgListFile="${DIR}/../data/management-group-list.localonly.json"
+
+if ! [[ -f "${mgListFile}" ]]; then
+  echo "File ${mgListFile} not found, creating one"
+
+  currentDir=$(pwd)
+  cd "${DIR}/../data" || exit
+  cp -v "management-group-list.example.json" "management-group-list.localonly.json"
+  cd "${currentDir}" || exit
+
+  echo "!! Please customize contents"
+else
+  echo "File is already there: ${mgListFile}"
+fi
+
+echo ""
+cat "${mgListFile}"
+echo ""

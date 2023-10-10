@@ -1,0 +1,33 @@
+#!/bin/env bash
+
+# Usage examples:
+# az-pim-list sub-example
+# az-pim-list mg-example
+
+set -euo pipefail
+
+DIR=$( cd "$( dirname "$0" )" && pwd )
+
+# shellcheck disable=SC1091
+source "${DIR}/../data/_util.sh"
+
+__list-pim() {
+  local scopeName=$1
+
+  scope=$(__get_scope_id "${scopeName}")
+
+  echo "List activated roles on ${scopeName} (${scope})"
+  echo ""
+
+  # output datetime is in UTC, using sed to convert to local time, and display in a more readable format
+  # 2023-09-01T00:00:00.00Z -> 12:00:00 09/01
+  # ignore single quote check
+  # shellcheck disable=SC2016
+  az rest --method GET \
+    --url "https://management.azure.com${scope}/providers/Microsoft.Authorization/roleAssignmentScheduleInstances" \
+    --url-parameters "api-version=2020-10-01" "\$filter=asTarget()" \
+    --query "value[].{Role: properties.expandedProperties.roleDefinition.displayName, Resource: properties.expandedProperties.scope.displayName, Type: properties.assignmentType, EndTime: properties.endDateTime }" \
+    --output table | sed -E 's#(^.*)([0-9]{4}.*Z)(.*)$#printf "%s%s%s" "\1" "$(date \"+%H:%M:%S %m-%d %Z\" --date=\2)" \3#e'
+}
+
+__list-pim "${@}"
