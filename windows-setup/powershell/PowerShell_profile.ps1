@@ -6,13 +6,13 @@ Set-PSReadlineOption -EditMode vi
 # Change cursor style per VI mode
 # See https://learn.microsoft.com/en-us/powershell/module/psreadline/set-psreadlineoption?view=powershell-7.3&viewFallbackFrom=powershell-7.1#example-6-use-vimodechangehandler-to-display-vi-mode-changes
 function OnViModeChange {
-    if ($args[0] -eq 'Command') {
-        # Set the cursor to a blinking block.
-        Write-Host -NoNewLine "`e[1 q"
-    } else {
-        # Set the cursor to a blinking line.
-        Write-Host -NoNewLine "`e[5 q"
-    }
+  if ($args[0] -eq 'Command') {
+    # Set the cursor to a blinking block.
+    Write-Host -NoNewLine "`e[1 q"
+  } else {
+    # Set the cursor to a blinking line.
+    Write-Host -NoNewLine "`e[5 q"
+  }
 }
 Set-PSReadLineOption -ViModeIndicator Script -ViModeChangeHandler $Function:OnViModeChange
 
