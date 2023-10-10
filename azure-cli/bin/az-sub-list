@@ -7,16 +7,19 @@
 # It needs to be quoted properly
 az account list -otable --query "[].{Default: isDefault, Name: name, ID: id}" | sed '/True/s/.*/printf "\\e[32m\0\\e[0m"/e'
 
+DIR=$( cd "$( dirname "$0" )" && pwd )
 
 # Save the list to a JSON file
 # So it could be utilized by other scripts
-subListFile="subscription-list.localonly.json"
-az account list --query="[].{name:name, id:id}" -ojson > $subListFile
+subListFile="${DIR}/../data/subscription-list.localonly.json"
+az account list --query="[].{name:name, id:id}" -ojson > "$subListFile"
 
-echo "Subscription list saved to: " "$(readlink -f $subListFile)"
-echo ''
-echo 'You can PIM up with commands like:'
-echo ''
-echo 'az-pim sub-name "Contributor" 1 "Deploy stuff" "JIRA" "TICKET-12345"'
-echo 'az-pim sub-name "Reader" 1'
-echo ''
+printf '%s' "
+Subscription list saved to: $(readlink -f "$subListFile")
+
+You can PIM up with commands like:
+
+az-pim sub-name \"Contributor\" 1 \"Deploy stuff\" \"JIRA\" \"TICKET-12345\"
+az-pim sub-name \"Reader\" 1
+
+"
