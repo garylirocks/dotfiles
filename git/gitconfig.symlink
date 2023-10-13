@@ -42,3 +42,5 @@
 	useHttpPath = false
 [pull]
 	rebase = true
+[credential "https://dev.azure.com"]
+	useHttpPath = true
