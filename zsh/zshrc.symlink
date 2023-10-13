@@ -11,6 +11,9 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+# Set up another env variable for local-only files
+export ZSH_LOCAL=$HOME/local
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -134,12 +137,12 @@ fpath=(~/.zsh/completion $fpath)
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/code
 
-# Stash your environment variables in ~/local/zshrc. This means they'll stay out
+# Stash your environment variables in $ZSH_LOCAL/zshrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
 # you'll have access to them in your scripts.
-if [[ -a ~/local/zshrc ]]
+if [[ -a "${ZSH_LOCAL}/zshrc" ]]
 then
-  source ~/local/zshrc
+  source "${ZSH_LOCAL}/zshrc"
 fi
 
 # all of our zsh files

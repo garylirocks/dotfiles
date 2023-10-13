@@ -17,8 +17,8 @@ if [ -f ~/.fzf.zsh ]; then
     # A custom function to help jump to a custom list of directories
     cc() {
         # load local specific quick dirs
-        if [ -f ~/local/fzf-local-quick-dirs.sh ]; then
-            source ~/local/fzf-local-quick-dirs.sh
+        if [ -f "${ZSH_LOCAL}/fzf-local-quick-dirs.sh" ]; then
+            source "${ZSH_LOCAL}/fzf-local-quick-dirs.sh"
         fi
 
         local quickDirs=~/linux_sync/config/quickDirs.txt

@@ -21,6 +21,6 @@ export PATH="$HOME/.local/bin:$PATH"
 # ============================
 # misc
 # ============================
-if [[ -d ~/local/bin ]]; then
-  export PATH="$HOME/local/bin:$PATH"
+if [[ -d "${ZSH_LOCAL}/bin" ]]; then
+  export PATH="${ZSH_LOCAL}/bin:$PATH"
 fi

@@ -14,7 +14,7 @@ source "${DIR}/../data/_util.sh"
 
 if [[ -z $AZURE_DEFAULT_SUBSCRIPTION_NAME ]]; then
   echo "Please set AZURE_DEFAULT_SUBSCRIPTION_NAME"
-  echo "Put following line in a local-only profile file (eg. ~/local/zshrc):"
+  echo "Put following line in a local-only profile file (eg. \$ZSH_LOCAL/zshrc):"
   echo ""
   echo "export AZURE_DEFAULT_SUBSCRIPTION_NAME=sub-example"
   exit 1
