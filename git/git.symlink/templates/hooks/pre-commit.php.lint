@@ -1,0 +1,32 @@
+#!/bin/bash
+
+##########
+# CAUTION:
+#   Since the file name is not precisely `pre-commit`, this hook is not triggered. Just kept here fore reference
+##########
+
+## find all php files that will be committed, and lint them, if any syntax error
+## found, abort the commit
+
+# exclude 'renamed' and 'deleted' entries
+PHP_FILES=$(git status | grep -v '^#\s*renamed:' | grep -v '^#\s*deleted:' | sed -nr '/\.php$/ s/.*: *//p')
+
+if [ -z "$PHP_FILES" ]; then
+    echo 'No PHP files to lint'
+    exit 0
+fi
+
+for F in $PHP_FILES; do
+    php -l $F
+    if [ $? -ne 0 ]; then
+        echo ''
+        echo '*** Syntax error found in: ' $F ' ***'
+        echo '*** Commit Aborted !! ***'
+        echo ''
+        exit 1
+    else
+        echo 'Syntax OK - ' $F
+    fi
+done
+
+sleep 1
