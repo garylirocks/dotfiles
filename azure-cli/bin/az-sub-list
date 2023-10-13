@@ -1,5 +1,10 @@
 #!/bin/env bash
 
+DIR=$( cd "$( dirname "$0" )" && pwd )
+
+# shellcheck disable=SC1091
+source "${DIR}/../_util.sh"
+
 # List all accounts(subscriptions), and highlight the default one
 #
 # The original command is like
@@ -7,15 +12,12 @@
 # It needs to be quoted properly
 az account list -otable --query "[].{Default: isDefault, Name: name, ID: id}" | sed '/True/s/.*/printf "\\e[32m\0\\e[0m"/e'
 
-DIR=$( cd "$( dirname "$0" )" && pwd )
-
 # Save the list to a JSON file
 # So it could be utilized by other scripts
-subListFile="${DIR}/../data/subscription-list.localonly.json"
-az account list --query="[].{name:name, id:id}" -ojson > "$subListFile"
+az account list --query="[].{name:name, id:id}" -ojson > "$AZ_SUBSCRIPTION_LIST_FILE"
 
 printf '%s' "
-Subscription list saved to: $(readlink -f "$subListFile")
+Subscription list saved to: $(readlink -f "$AZ_SUBSCRIPTION_LIST_FILE")
 
 You can PIM up with commands like:
 

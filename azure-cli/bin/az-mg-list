@@ -1,22 +1,17 @@
 #!/bin/env bash
 
 DIR=$( cd "$( dirname "$0" )" && pwd )
+# shellcheck disable=SC1091
+source "${DIR}/../_util.sh"
 
-mgListFile="${DIR}/../data/management-group-list.localonly.json"
-
-if ! [[ -f "${mgListFile}" ]]; then
-  echo "File ${mgListFile} not found, creating one"
-
-  currentDir=$(pwd)
-  cd "${DIR}/../data" || exit
-  cp -v "management-group-list.example.json" "management-group-list.localonly.json"
-  cd "${currentDir}" || exit
-
+if ! [[ -f "${AZ_MANAGEMENT_GROUP_LIST_FILE}" ]]; then
+  echo "File ${AZ_MANAGEMENT_GROUP_LIST_FILE} not found, creating one"
+  cp -v "${DIR}/../management-group-list.example.json" "${AZ_MANAGEMENT_GROUP_LIST_FILE}"
   echo "!! Please customize contents"
 else
-  echo "File is already there: ${mgListFile}"
+  echo "File is already there: ${AZ_MANAGEMENT_GROUP_LIST_FILE}"
 fi
 
 echo ""
-cat "${mgListFile}"
+cat "${AZ_MANAGEMENT_GROUP_LIST_FILE}"
 echo ""

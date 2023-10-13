@@ -9,7 +9,7 @@ set -euo pipefail
 DIR=$( cd "$( dirname "$0" )" && pwd )
 
 # shellcheck disable=SC1091
-source "${DIR}/../data/_util.sh"
+source "${DIR}/../_util.sh"
 
 __list-pim() {
   local scopeName=$1

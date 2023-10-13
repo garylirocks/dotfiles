@@ -38,8 +38,8 @@
 
 ### Support files
 
-- `data/_util.sh`
+- `_util.sh`
   - Contains a function that translates subscription or management group name to full resource ID
 
-- `data/management-group-list.example.json`
+- `management-group-list.example.json`
   - example JSON file for a list of management groups
