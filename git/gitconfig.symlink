@@ -27,6 +27,7 @@
 	dump = cat-file -p
 	alias = config --get-regexp alias.*
 	add-untracked = !"git ls-files -o --exclude-standard | xargs -i git add '{}'"
+	empty = commit --allow-empty -m 'Create an empty commit'
 
 [i18n]
 	logOutputEncoding = utf-8
