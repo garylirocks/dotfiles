@@ -1,7 +1,9 @@
 
 echo "Configuring pwsh (PowerShell Core)"
 
-pwsh_profile=$(pwsh -Command '$Profile.CurrentUserAllHosts')
+# the pwsh command might output notices about availability of package updates, so make sure only save the last line
+pwsh_profile=$(pwsh -Command '$Profile.CurrentUserAllHosts' | tail -1)
+
 shared_profile=$HOME/.dotfiles/windows-setup/powershell/PowerShell_profile.ps1
 
 if ! [ -d $(dirname $pwsh_profile) ]; then
