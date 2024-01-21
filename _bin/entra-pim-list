@@ -1,7 +1,9 @@
 #!/bin/env pwsh
 
+# List activated Entra PIM roles
+
 Write-Host "Log in"
-Connect-MgGraph -Scopes "RoleManagement.ReadWrite.Directory" -NoWelcome
+Connect-MgGraph -Scopes "RoleAssignmentSchedule.ReadWrite.Directory,RoleManagement.Read.Directory" -NoWelcome
 
 Write-Host "Get my principal ID"
 $myUpn=(Get-MgContext).Account

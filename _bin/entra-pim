@@ -1,0 +1,47 @@
+#!/bin/env pwsh
+
+# Activat Entra PIM role
+
+# Usage examples:
+# Scope could be name of management group or subscription
+# Some scope requries tickets number, some don't
+
+# script "Global Reader" 1 "Discovery" "JIRA" "TICKET-12345"
+
+Param(
+  $roleName = 'Global Reader',
+  $durationInHours= '1',
+  $justification= 'Discovery',
+  $ticketSystem= 'JIRA',
+  $ticketNumber= 'na'
+)
+
+Connect-MgGraph -Scopes "RoleAssignmentSchedule.ReadWrite.Directory,RoleManagement.Read.Directory" -NoWelcome
+
+$myUpn=(Get-MgContext).Account
+$myPrincipalId=(Get-MgUser -Filter "UserPrincipalName eq '$myUpn'").Id
+
+$params = @{
+  "PrincipalId" = $myPrincipalId
+  "RoleDefinitionId" = (Get-MgDirectoryRole -Filter "DisplayName eq '${roleName}'").RoleTemplateId
+  "Justification" = "Discovery"
+  "DirectoryScopeId" = "/"
+  "Action" = "SelfActivate"
+  "TicketInfo" = @{
+    "TicketSystem" = "${ticketSystem}"
+    "TicketNumber" = "${ticketNumber}"
+  }
+  "ScheduleInfo" = @{
+    "StartDateTime" = Get-Date
+    "Expiration" = @{
+      "Type" = "AfterDuration"
+      "Duration" = "PT${durationInHours}H"
+    }
+  }
+}
+
+Write-Host "Activating '${roleName}' for ${durationInHours} hour(s)"
+
+New-MgRoleManagementDirectoryRoleAssignmentScheduleRequest `
+  -BodyParameter $params |
+  Format-List Id, Status, Action, AppScopeId, DirectoryScopeId, RoleDefinitionID, IsValidationOnly, Justification, PrincipalId, CompletedDateTime, CreatedDateTime, TargetScheduleID
