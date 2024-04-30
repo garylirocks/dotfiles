@@ -10,7 +10,7 @@ source "${DIR}/../_util.sh"
 # The original command is like
 #   az account list -otable --query "[].{Default: isDefault, Name: name, ID: id}" | sed '/True/s/.*/printf "\\e[32m\0\\e[0m"/e'
 # It needs to be quoted properly
-az account list -otable --query "[].{Default: isDefault, Name: name, ID: id}" | sed '/True/s/.*/printf "\\e[32m\0\\e[0m"/e'
+az account list -otable --query "[].{Default: isDefault, Name: name, ID: id}" | sed '/True/s/.*/printf "\\e[32m\0\\e[0m"/e;s/^False/     /'
 
 # Save the list to a JSON file
 # So it could be utilized by other scripts

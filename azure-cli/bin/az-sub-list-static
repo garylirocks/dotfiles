@@ -1,0 +1,22 @@
+#!/bin/env bash
+
+# Output a static list of Azure subscriptions that you may need access to
+
+AZURE_CACHE_DIR="${ZSH_LOCAL}/azure"
+
+AZ_SUBSCRIPTION_LIST_STATIC_FILE="${AZURE_CACHE_DIR}/subscription-list-static.localonly.json"
+
+if ! [[ -f "${AZ_SUBSCRIPTION_LIST_STATIC_FILE}" ]]; then
+  echo "Subscription list static file not found: ${AZ_SUBSCRIPTION_LIST_STATIC_FILE}"
+  echo "Please run az-sub-list, then update the contents of the file"
+  return 1
+fi
+
+printf '%s' "
+This is a STATIC list of Azure subscriptions you may need access to.
+
+To get the real time dynamic list, run: az-sub-list
+
+"
+
+cat "${AZ_SUBSCRIPTION_LIST_STATIC_FILE}"
