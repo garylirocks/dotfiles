@@ -8,7 +8,8 @@ Main customizations I have done:
 
 - Added various topic folders
 - Added `ubuntu-setup` (TODO: clean up)
-- Added `windows-setup` folders
+- Added `windows-setup` folder
+- Added `mac-setup` folder
 - Submodules for `oh-my-zsh` plugins
 
 
@@ -21,6 +22,8 @@ Main customizations I have done:
   ```
 
   Every `<topic>/install.sh` file is executed to install each tool. To avoid being loaded automatically, its extension is `.sh`, not `.zsh`.
+
+  *The scripts were created for Linux (Ubuntu), some may not work for other Linux distributions, or Mac, list the install.sh scripts, and try run and fix each*
 
 - Create symlinks
 
