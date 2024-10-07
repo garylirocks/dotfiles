@@ -36,13 +36,13 @@ Plug 'vim-syntastic/syntastic'
 
 
 " update tag files automatically
-Plug 'xolox/vim-misc'     " required by the easytags plugin
-Plug 'xolox/vim-easytags'
+" Plug 'xolox/vim-misc'     " required by the easytags plugin
+" Plug 'xolox/vim-easytags'
 
 
 " show tags in a separate window
-Plug 'majutsushi/tagbar'
-nmap <F8> :TagbarToggle<CR>
+" Plug 'majutsushi/tagbar'
+" nmap <F8> :TagbarToggle<CR>
 
 
 " surround
@@ -101,4 +101,3 @@ Plug 'mhinz/vim-startify'
 " ====== /plugin on GitHub repo ======
 
 call plug#end()            " required
-
