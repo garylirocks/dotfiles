@@ -7,4 +7,8 @@
 
   ```sh
   brew install --cask google-chrome
+
+  # Windows style Alt + Tab for switching windows
+  # You need to give it some high-level permissions
+  brew install --cask alt-tab
   ```
