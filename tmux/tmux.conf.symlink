@@ -13,8 +13,9 @@ set-option -g history-limit 100000
 #setw -g xterm-keys on
 #set-option -g default-terminal "screen-256color"
 
-# let tmux don't wait on escape key, pass it to vi
-set -s escape-time 0
+# how long tmux "waits [in milliseconds] after an escape is input to determine if it is part of a function or meta key sequences."
+# Can't be 0, otherwise there is a issue in VSCode, see https://github.com/microsoft/vscode/issues/207545
+set -s escape-time 100
 
 # synchronize commands to all panes in a window
 bind C-g set-window-option synchronize-panes
