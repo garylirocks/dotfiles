@@ -1,16 +1,22 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 DIR=$( cd "$( dirname "$0" )" && pwd )
 
 # shellcheck disable=SC1091
 source "${DIR}/../_util.sh"
 
-# List all accounts(subscriptions), and highlight the default one
-#
-# The original command is like
-#   az account list -otable --query "[].{Default: isDefault, Name: name, ID: id}" | sed '/True/s/.*/printf "\\e[32m\0\\e[0m"/e'
-# It needs to be quoted properly
-az account list -otable --query "[].{Default: isDefault, Name: name, ID: id}" | sed '/True/s/.*/printf "\\e[32m\0\\e[0m"/e;s/^False/     /'
+# List all accounts(subscriptions)
+if [[ $(uname -o) == 'Darwin' ]]; then
+  # Mac OS
+  az account list -otable --query "[].{Default: isDefault, Name: name, ID: id}"
+else
+  # Linux, highlight the default subscription
+  #
+  # The original command is like
+  #   az account list -otable --query "[].{Default: isDefault, Name: name, ID: id}" | sed '/True/s/.*/printf "\\e[32m\0\\e[0m"/e'
+  # It needs to be quoted properly
+  az account list -otable --query "[].{Default: isDefault, Name: name, ID: id}" | sed '/True/s/.*/printf "\\e[32m\0\\e[0m"/e;s/^False/     /'
+fi
 
 # Save the list to a JSON file
 # So it could be utilized by other scripts

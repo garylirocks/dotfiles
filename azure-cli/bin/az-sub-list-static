@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 # Output a static list of Azure subscriptions that you may need access to
 
