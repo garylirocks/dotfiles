@@ -74,3 +74,4 @@ __MACOSX
 *.localbak.*
 *.localonly
 *.localonly.*
+localonly.*
